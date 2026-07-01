@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <span class="badge bg-warning text-dark mb-3 fs-6">
+                    🐓 Premium Poultry Farm
+                </span>
+
+                <h1 class="display-4 fw-bold">
+                    Premium Breeding Roosters,
+                    Chicks & Hatching Eggs
+                </h1>
+
+                <p class="lead mt-4">
+                    Healthy breeding stock raised with quality nutrition and care.
+                    Trusted by poultry breeders across Telangana.
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="#" class="btn btn-success btn-lg me-3">
+                        Browse Products
+                    </a>
+
+                    <a href="#" class="btn btn-outline-success btn-lg">
+                        Pre-Order Now
+                    </a>
+
+                </div>
+
+                <div class="row mt-5">
+
+                    <div class="col-4">
+                        <h3 class="fw-bold">500+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+
+                    <div class="col-4">
+                        <h3 class="fw-bold">3000+</h3>
+                        <p>Birds Sold</p>
+                    </div>
+
+                    <div class="col-4">
+                        <h3 class="fw-bold">100%</h3>
+                        <p>Healthy Stock</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <img src="{% static 'images/logo.png' %}"
+                     class="img-fluid"
+                     style="max-height:500px;">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Featured Categories -->
+
+<section class="container py-5">
+
+    <div class="text-center mb-5">
+
+        <h2 class="fw-bold">Our Categories</h2>
+
+        <p class="text-muted">
+            Quality poultry products directly from SS Farms
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4 col-sm-6">
+
+            <div class="category-card text-center p-4">
+
+                <div class="icon">🐓</div>
+
+                <h4>Roosters</h4>
+
+                <p>Premium breeding roosters raised with proper care.</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+
+            <div class="category-card text-center p-4">
+
+                <div class="icon">🐥</div>
+
+                <h4>Chicks</h4>
+
+                <p>Healthy day-old and growing chicks.</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+
+            <div class="category-card text-center p-4">
+
+                <div class="icon">🥚</div>
+
+                <h4>Hatching Eggs</h4>
+
+                <p>Carefully selected fertile eggs for incubation.</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+
+            <div class="category-card text-center p-4">
+
+                <div class="icon">🌾</div>
+
+                <h4>Feed</h4>
+
+                <p>Nutritious feed for healthy poultry growth.</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+
+            <div class="category-card text-center p-4">
+
+                <div class="icon">💊</div>
+
+                <h4>Medicines</h4>
+
+                <p>Poultry healthcare products and supplements.</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+
+            <div class="category-card text-center p-4">
+
+                <div class="icon">🛒</div>
+
+                <h4>Accessories</h4>
+
+                <p>Equipment and supplies for poultry farming.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
