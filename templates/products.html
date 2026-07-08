@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <!-- Heading -->
+
+        <div class="text-center mb-5">
+
+            <h1 class="fw-bold">Our Products</h1>
+
+            <p class="text-muted">
+                Browse our premium poultry products.
+            </p>
+
+        </div>
+
+        <!-- Search -->
+
+        <form method="GET" class="mb-4">
+
+            <div class="input-group">
+
+                <input
+                    type="text"
+                    name="q"
+                    class="form-control"
+                    placeholder="Search products..."
+                    value="{{ query|default:'' }}">
+
+                <button class="btn btn-success">
+                    <i class="bi bi-search"></i> Search
+                </button>
+
+            </div>
+
+        </form>
+
+        <!-- Category Filter -->
+
+        <div class="mb-5">
+
+            <a href="{% url 'products' %}"
+               class="btn {% if not selected_category %}btn-success{% else %}btn-outline-success{% endif %} me-2 mb-2">
+
+                All
+
+            </a>
+
+            {% for category in categories %}
+
+                <a href="?category={{ category.id }}"
+                   class="btn {% if selected_category == category.id|stringformat:'s' %}btn-success{% else %}btn-outline-success{% endif %} me-2 mb-2">
+
+                    {{ category.icon }} {{ category.name }}
+
+                </a>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- Products -->
+
+        <div class="row g-4">
+
+            {% for product in products %}
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="card h-100 shadow border-0 rounded-4">
+
+                    <a href="{% url 'product_detail' product.id %}">
+
+                        <img src="{{ product.image.url }}"
+                             class="card-img-top"
+                             alt="{{ product.name }}"
+                             style="height:260px; object-fit:cover;">
+
+                    </a>
+
+                    <div class="card-body">
+
+                        <span class="badge bg-success mb-2">
+
+                            {{ product.status }}
+
+                        </span>
+
+                        <h4 class="mt-2">
+
+                            <a href="{% url 'product_detail' product.id %}"
+                               class="text-dark text-decoration-none">
+
+                                {{ product.name }}
+
+                            </a>
+
+                        </h4>
+
+                        <p class="text-muted">
+
+                            {{ product.description|truncatewords:15 }}
+
+                        </p>
+
+                        <h4 class="text-success fw-bold">
+
+                            ₹{{ product.price }}
+
+                        </h4>
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0">
+
+                        <div class="d-grid gap-2">
+
+                            <a href="{% url 'product_detail' product.id %}"
+                               class="btn btn-outline-success">
+
+                                View Details
+
+                            </a>
+
+                            <a href="https://wa.me/{{ product.whatsapp_number }}?text=Hello%20SS%20Farms,%0A%0AI%20am%20interested%20in%20{{ product.name }}.%0APrice:%20₹{{ product.price }}.%0APlease%20let%20me%20know%20if%20it%20is%20available."
+                               target="_blank"
+                               class="btn btn-success">
+
+                                <i class="bi bi-whatsapp"></i>
+
+                                Order on WhatsApp
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+            <div class="col-12 text-center">
+
+                <h3>No Products Found</h3>
+
+                <p class="text-muted">
+
+                    Try another search or category.
+
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

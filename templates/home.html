@@ -4,51 +4,52 @@
 {% block content %}
 
 <!-- Hero Section -->
-<section class="hero">
+<section class="hero-section">
+
+    <div class="overlay"></div>
 
     <div class="container">
 
-        <div class="row align-items-center">
+        <div class="row align-items-center min-vh-100">
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 text-white">
 
-                <span class="badge bg-success mb-3">
-                    Premium Poultry Breeding Farm
+                <span class="badge bg-warning text-dark px-3 py-2 mb-3">
+                    Premium Poultry Farm
                 </span>
 
-                <h1 class="display-3 fw-bold mb-4">
-
-                    Original Fighting-Breed
-                    Roosters, Chicks &
+                <h1 class="display-3 fw-bold">
+                    Premium Fighting Breed
+                    <span class="text-warning">Roosters</span>,
+                    Chicks &
                     Hatching Eggs
-
                 </h1>
 
-                <p class="lead text-secondary">
+                <p class="lead my-4">
 
-                    Healthy breeding stock raised with proper nutrition,
-                    responsible care, and quality management.
+                    Healthy birds, pure bloodlines,
+                    expert care, and trusted breeding
+                    from SS Farms Wanaparthy.
 
                 </p>
 
-                <div class="mt-4">
+                <div class="d-flex gap-3 flex-wrap">
 
-                    <a class="btn btn-success btn-lg rounded-pill px-5 me-3">
+                    <a href="{% url 'products' %}"
+                       class="btn btn-success btn-lg rounded-pill px-5">
+
                         Browse Products
+
                     </a>
 
-                    <a class="btn btn-outline-success btn-lg rounded-pill px-5">
-                        Contact Us
+                    <a href="{% url 'preorder' %}"
+                       class="btn btn-outline-light btn-lg rounded-pill px-5">
+
+                        Pre-Order Now
+
                     </a>
 
                 </div>
-
-            </div>
-
-            <div class="col-lg-6 text-center mt-5 mt-lg-0">
-
-                <img src="{% static 'images/logo.png' %}"
-                     class="img-fluid hero-image">
 
             </div>
 
@@ -57,7 +58,113 @@
     </div>
 
 </section>
-<!-- Featured Categories -->
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                Why Choose SS Farms?
+            </h2>
+
+            <p class="text-muted">
+                We provide healthy poultry with trusted breeding and quality care.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="feature-card text-center">
+
+                    <div class="feature-icon">
+    <i class="bi bi-award-fill"></i>
+</div>
+
+                    <h4>Pure Bloodline</h4>
+
+                    <p>
+                        Carefully selected premium breeding stock.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="feature-card text-center">
+
+                   <div class="feature-icon">
+    <i class="bi bi-shield-check"></i>
+</div>
+
+                    <h4>Healthy Birds</h4>
+
+                    <p>
+                        Proper nutrition and timely vaccination.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="feature-card text-center">
+
+                    <div class="feature-icon">
+    <i class="bi bi-truck"></i>
+</div>
+
+                    <h4>Safe Delivery</h4>
+
+                    <p>
+                        Secure transportation with proper handling.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="feature-card text-center">
+
+                   <div class="feature-icon">
+    <i class="bi bi-headset"></i>
+</div>
+                    <h4>Customer Support</h4>
+
+                    <p>
+                        We assist customers before and after purchase.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Why Choose SS Farms -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            
+
+</section>
+
+<!-- Categories Section -->
 
 <section class="container py-5">
 
@@ -75,85 +182,185 @@
 
         <div class="col-md-4 col-sm-6">
 
-            <div class="category-card text-center p-4">
+    <a href="/products/?category=9" class="text-decoration-none text-dark">
 
-                <div class="icon">🐓</div>
+        <div class="category-card text-center p-4">
 
-                <h4>Roosters</h4>
+            <div class="icon">🐓</div>
 
-                <p>Premium breeding roosters raised with proper care.</p>
+            <h4>Roosters</h4>
 
-            </div>
-
-        </div>
-
-        <div class="col-md-4 col-sm-6">
-
-            <div class="category-card text-center p-4">
-
-                <div class="icon">🐥</div>
-
-                <h4>Chicks</h4>
-
-                <p>Healthy day-old and growing chicks.</p>
-
-            </div>
+            <p>Premium breeding roosters raised with proper care.</p>
 
         </div>
 
+    </a>
+
+</div>
         <div class="col-md-4 col-sm-6">
 
-            <div class="category-card text-center p-4">
+    <a href="/products/?category=8" class="text-decoration-none text-dark">
 
-                <div class="icon">🥚</div>
+        <div class="category-card text-center p-4">
 
-                <h4>Hatching Eggs</h4>
+            <div class="icon">🐥</div>
 
-                <p>Carefully selected fertile eggs for incubation.</p>
+            <h4>Chicks</h4>
 
-            </div>
+            <p>Healthy day-old and growing chicks.</p>
 
         </div>
 
-        <div class="col-md-4 col-sm-6">
+    </a>
 
-            <div class="category-card text-center p-4">
+</div>
 
-                <div class="icon">🌾</div>
+       <div class="col-md-4 col-sm-6">
 
-                <h4>Feed</h4>
+    <a href="/products/?category=3" class="text-decoration-none text-dark">
 
-                <p>Nutritious feed for healthy poultry growth.</p>
+        <div class="category-card text-center p-4">
 
-            </div>
+            <div class="icon">🥚</div>
 
-        </div>
+            <h4>Hatching Eggs</h4>
 
-        <div class="col-md-4 col-sm-6">
-
-            <div class="category-card text-center p-4">
-
-                <div class="icon">💊</div>
-
-                <h4>Medicines</h4>
-
-                <p>Poultry healthcare products and supplements.</p>
-
-            </div>
+            <p>Carefully selected fertile eggs for incubation.</p>
 
         </div>
 
+    </a>
+
+</div>
+<div class="col-md-4 col-sm-6">
+
+    <a href="/products/?category=4" class="text-decoration-none text-dark">
+
+        <div class="category-card text-center p-4">
+
+            <div class="icon">🌾</div>
+
+            <h4>Feed</h4>
+
+            <p>Nutritious feed for healthy poultry growth.</p>
+
+        </div>
+
+    </a>
+
+</div>
+
+     <div class="col-md-4 col-sm-6">
+
+    <a href="/products/?category=5" class="text-decoration-none text-dark">
+
+        <div class="category-card text-center p-4">
+
+            <div class="icon">💊</div>
+
+            <h4>Medicines</h4>
+
+            <p>Poultry healthcare products and supplements.</p>
+
+        </div>
+
+    </a>
+
+</div>
+
         <div class="col-md-4 col-sm-6">
 
-            <div class="category-card text-center p-4">
+    <a href="/products/?category=6" class="text-decoration-none text-dark">
 
-                <div class="icon">🛒</div>
+        <div class="category-card text-center p-4">
 
-                <h4>Accessories</h4>
+            <div class="icon">🛒</div>
 
+            <h4>Accessories</h4>
                 <p>Equipment and supplies for poultry farming.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Featured Products -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Featured Products</h2>
+            <p class="text-muted">
+                Explore our premium breeding stock.
+            </p>
+        </div>
+
+        <div class="row">
+
+            {% for product in products %}
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <div class="card h-100 shadow-sm">
+
+    <a href="{% url 'product_detail' product.id %}">
+        <img src="{{ product.image.url }}"
+             class="card-img-top"
+             style="height:250px; object-fit:cover;">
+    </a>
+
+    <div class="card-body">
+
+        <span class="badge bg-success">
+            {{ product.status }}
+        </span>
+
+        <h4 class="mt-3">
+            <a href="{% url 'product_detail' product.id %}"
+               class="text-dark text-decoration-none">
+                {{ product.name }}
+            </a>
+        </h4>
+
+                        <p class="text-muted">
+                            {{ product.description|truncatewords:12 }}
+                        </p>
+
+                        <h5 class="text-success">
+                            ₹{{ product.price }}
+                        </h5>
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0">
+
+                        <a href="https://wa.me/{{ product.whatsapp_number }}?text=Hi, I want to reserve {{ product.name }}"
+                           class="btn btn-success w-100">
+
+                            <i class="bi bi-whatsapp"></i>
+
+                            Order on WhatsApp
+
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
+
+            {% empty %}
+
+            <div class="text-center">
+
+                <h3>No Products Available</h3>
+
+            </div>
+
+            {% endfor %}
 
         </div>
 

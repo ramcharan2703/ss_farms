@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="card shadow border-0 rounded-4">
+
+                    <div class="card-header bg-success text-white text-center py-3">
+
+                        <h2 class="mb-0">
+                            Pre-Order Form
+                        </h2>
+
+                    </div>
+
+                    <div class="card-body p-4">
+
+                        <form method="POST">
+
+                            {% csrf_token %}
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Customer Name
+                                </label>
+
+                                {{ form.customer_name }}
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Phone Number
+                                </label>
+
+                                {{ form.phone_number }}
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Product
+                                </label>
+
+                                {{ form.product }}
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Quantity
+                                </label>
+
+                                {{ form.quantity }}
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Preferred Delivery Date
+                                </label>
+
+                                {{ form.preferred_date }}
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Address
+                                </label>
+
+                                {{ form.address }}
+
+                            </div>
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Additional Notes
+                                </label>
+
+                                {{ form.notes }}
+
+                            </div>
+
+                            <button type="submit"
+                                    class="btn btn-success w-100">
+
+                                Submit Pre-Order
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
