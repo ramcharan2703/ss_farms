@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from products.models import Product
+from products.models import Category, Product
 
 def home(request):
-    products = Product.objects.all()
+    categories = Category.objects.all()
+    products = Product.objects.all()[:6]
 
-    context = {
-        "products": products
-    }
-
-    return render(request, "home.html", context)
+    return render(request, "home.html", {
+        "categories": categories,
+        "products": products,
+    })

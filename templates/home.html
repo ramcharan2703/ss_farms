@@ -217,177 +217,54 @@
 
         <div class="row g-4">
 
-            <div class="col-lg-4 col-md-6">
+    {% for category in categories %}
 
-                <a href="/products/?category=9"
-                   class="text-decoration-none text-dark">
+    <div class="col-lg-4 col-md-6">
 
-                    <div class="category-card">
+        <a href="{% url 'products' %}?category={{ category.id }}"
+           class="text-decoration-none text-dark">
 
-                       <div class="feature-category-icon">
-    <i class="bi bi-feather"></i>
-</div>
+            <div class="category-card">
 
-                        <h4>
+                <div class="feature-category-icon">
 
-                            Roosters
+                    {% if category.name == "Roosters" %}
+                        <i class="bi bi-feather"></i>
 
-                        </h4>
+                    {% elif category.name == "Chicks" %}
+                        <i class="bi bi-emoji-smile"></i>
 
-                        <p>
+                    {% elif category.name == "Hatching Eggs" %}
+                        <i class="bi bi-egg-fill"></i>
 
-                            Premium breeding roosters.
+                    {% elif category.name == "Feed" %}
+                        <i class="bi bi-flower1"></i>
 
-                        </p>
+                    {% elif category.name == "Medicines" %}
+                        <i class="bi bi-capsule-pill"></i>
 
-                    </div>
+                    {% elif category.name == "Accessories" %}
+                        <i class="bi bi-basket2-fill"></i>
 
-                </a>
+                    {% else %}
+                        <i class="bi bi-grid"></i>
+                    {% endif %}
 
-            </div>
+                </div>
 
-            <div class="col-lg-4 col-md-6">
+                <h4>{{ category.name }}</h4>
 
-                <a href="/products/?category=8"
-                   class="text-decoration-none text-dark">
-
-                    <div class="category-card">
-<div class="feature-category-icon">
-    <i class="bi bi-emoji-smile"></i>
-</div>
-
-                        <h4>
-
-                            Chicks
-
-                        </h4>
-
-                        <p>
-
-                            Healthy day-old chicks.
-
-                        </p>
-
-                    </div>
-
-                </a>
+                <p>{{ category.description }}</p>
 
             </div>
 
-            <div class="col-lg-4 col-md-6">
+        </a>
 
-                <a href="/products/?category=3"
-                   class="text-decoration-none text-dark">
+    </div>
 
-                    <div class="category-card">
+    {% endfor %}
 
-                        <div class="feature-category-icon">
-    <i class="bi bi-egg-fill"></i>
 </div>
-                        <h4>
-
-                            Hatching Eggs
-
-                        </h4>
-
-                        <p>
-
-                            High-quality fertile eggs.
-
-                        </p>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-
-                <a href="/products/?category=4"
-                   class="text-decoration-none text-dark">
-
-                    <div class="category-card">
-
-                       <div class="feature-category-icon">
-    <i class="bi bi-flower1"></i>
-</div>
-                        <h4>
-
-                            Feed
-
-                        </h4>
-
-                        <p>
-
-                            Nutritious poultry feed.
-
-                        </p>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-
-                <a href="/products/?category=5"
-                   class="text-decoration-none text-dark">
-
-                    <div class="category-card">
-
-                       <div class="feature-category-icon">
-    <i class="bi bi-capsule-pill"></i>
-</div>
-
-                        <h4>
-
-                            Medicines
-
-                        </h4>
-
-                        <p>
-
-                            Healthcare and supplements.
-
-                        </p>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-
-                <a href="/products/?category=6"
-                   class="text-decoration-none text-dark">
-
-                    <div class="category-card">
-
-                        <div class="feature-category-icon">
-    <i class="bi bi-basket2-fill"></i>
-</div>
-                        <h4>
-
-                            Accessories
-
-                        </h4>
-
-                        <p>
-
-                            Equipment and poultry supplies.
-
-                        </p>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-        </div>
 
     </div>
 
