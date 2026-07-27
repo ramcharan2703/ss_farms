@@ -66,10 +66,7 @@
 </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Breeds</a>
-                </li>
-
+                
                 <li class="nav-item">
                     <a class="nav-link" href="#">Gallery</a>
                 </li>
@@ -79,12 +76,26 @@
     Contact
 </a>
                 </li>
+<li class="nav-item">
+   <a class="nav-link position-relative" href="{% url 'cart' %}">
+    <i class="bi bi-cart3"></i> Cart
+
+    {% if cart_count > 0 %}
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{ cart_count }}
+        </span>
+    {% endif %}
+</a>
+</li>
 
                 <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
                     <a href="#" class="btn btn-success rounded-pill px-4">
                         Pre-Order
                     </a>
                 </li>
+
+
+
 
             </ul>
 
@@ -95,6 +106,19 @@
 </header>
 
 <main>
+    {% if messages %}
+<div class="container mt-3">
+    {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show">
+            {{ message }}
+            <button type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert">
+            </button>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
 
 {% block content %}
 

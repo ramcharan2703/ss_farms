@@ -42,6 +42,14 @@
                 {{ product.stock }}
             </p>
 
+              <a href="{% url 'add_to_cart' product.id %}"
+                  class="btn btn-warning w-100 mb-3">
+
+                  <i class="bi bi-cart-plus"></i>
+                    Add to Cart
+
+                </a>
+
             <a href="https://wa.me/{{ product.whatsapp_number }}"
                class="btn btn-success btn-lg"
                target="_blank">

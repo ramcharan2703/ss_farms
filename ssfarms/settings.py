@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'core',
     'products',
     'orders',
-    'contact'
+    'contact',
+    'inquiry'
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'inquiry.context_processors.cart_count',
             ],
         },
     },

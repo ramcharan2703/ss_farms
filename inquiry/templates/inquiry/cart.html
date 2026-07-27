@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h2 class="mb-4">
+        🛒 Cart
+    </h2>
+
+    {% if items %}
+
+        {% for item in items %}
+
+        <div class="card mb-3">
+
+            <div class="card-body">
+
+                <div class="row align-items-center">
+
+                    <div class="col-md-2">
+
+                        <img src="{{ item.product.image.url }}"
+                             class="img-fluid rounded"
+                             alt="{{ item.product.name }}">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <h4>{{ item.product.name }}</h4>
+
+                        <p>₹{{ item.product.price }}</p>
+
+                        <div class="d-flex align-items-center gap-2 my-2">
+
+    <a href="{% url 'decrease_quantity' item.product.id %}"
+       class="btn btn-outline-danger btn-sm">
+        −
+    </a>
+
+    <span class="fw-bold">
+        {{ item.quantity }}
+    </span>
+
+    <a href="{% url 'increase_quantity' item.product.id %}"
+       class="btn btn-outline-success btn-sm">
+        +
+    </a>
+
+</div>
+
+                    </div>
+
+                    <div class="col-md-4 text-end">
+
+                        <a href="{% url 'remove_from_cart' item.product.id %}"
+                           class="btn btn-danger">
+
+                            Remove
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+        <div class="text-end mt-4">
+
+    <a href="{{ whatsapp_link }}"
+       target="_blank"
+       class="btn btn-success btn-lg">
+
+        <i class="bi bi-whatsapp"></i>
+
+        Send Cart on WhatsApp
+
+    </a>
+
+</div>
+<div class="text-end mt-3">
+    <a href="{% url 'clear_cart' %}" class="btn btn-danger">
+        🗑 Clear Cart
+    </a>
+</div>
+
+    {% else %}
+
+        <div class="text-center">
+
+            <h4>Your  Cart is Empty.</h4>
+
+            <a href="{% url 'products' %}" class="btn btn-success mt-3">
+                Browse Products
+            </a>
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
