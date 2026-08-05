@@ -1136,3 +1136,7 @@ iframe{
     background:#146c43;
 
 }
+
+html {
+    scroll-behavior: smooth;
+}

@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
+{% block title %}
+Contact SS Farms Wanaparthy
+{% endblock %}
+
+{% block meta_description %}
+Contact SS Farms Wanaparthy for premium Bheemavaram Fighting Roosters, chicks, hatching eggs and poultry products.
+{% endblock %}
 
 {% block content %}
 
@@ -52,7 +59,9 @@
                         <p>
                             <i class="bi bi-whatsapp text-success"></i>
                             <strong>WhatsApp:</strong><br>
-                            +91 8790733189
+                            <a href="https://wa.me/918790733189" class="text-decoration-none">
+                                +91 8790733189
+                            </a>
                         </p>
 
                         <hr>
@@ -81,7 +90,10 @@
                             Send Us a Message
                         </h3>
 
-                        <form>
+                        
+                        <form method="POST">
+
+                            {% csrf_token %}
 
                             <div class="mb-3">
 
@@ -89,9 +101,12 @@
                                     Name
                                 </label>
 
-                                <input type="text"
-                                       class="form-control"
-                                       placeholder="Enter your name">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    class="form-control"
+                                    placeholder="Enter your name"
+                                    required>
 
                             </div>
 
@@ -101,9 +116,12 @@
                                     Email
                                 </label>
 
-                                <input type="email"
-                                       class="form-control"
-                                       placeholder="Enter your email">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    class="form-control"
+                                    placeholder="Enter your email"
+                                    required>
 
                             </div>
 
@@ -113,9 +131,12 @@
                                     Phone Number
                                 </label>
 
-                                <input type="text"
-                                       class="form-control"
-                                       placeholder="Enter your phone number">
+                                <input
+                                    type="text"
+                                    name="phone"
+                                    class="form-control"
+                                    placeholder="Enter your phone number"
+                                    required>
 
                             </div>
 
@@ -125,13 +146,20 @@
                                     Message
                                 </label>
 
-                                <textarea class="form-control"
-                                          rows="5"
-                                          placeholder="Write your message here"></textarea>
+                                <textarea
+                                    name="message"
+                                    class="form-control"
+                                    rows="5"
+                                    placeholder="Write your message here..."
+                                    required></textarea>
 
                             </div>
 
-                            <button class="btn btn-success w-100">
+                            <button
+                                type="submit"
+                                class="btn btn-success w-100">
+
+                                <i class="bi bi-send-fill"></i>
 
                                 Send Message
 

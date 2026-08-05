@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
+{% block title %}
+SS Farms Wanaparthy | Premium Bheemavaram Fighting Roosters & Hatching Eggs
+{% endblock %}
+
+{% block meta_description %}
+SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatching eggs, poultry feed, medicines and accessories across Telangana, Andhra Pradesh, Karnataka and all over India.
+{% endblock %}
 {% load static %}
 
 {% block content %}
@@ -384,100 +391,133 @@
 
 <!-- ================= FARM GALLERY ================= -->
 
-<section class="py-5">
+<section id="gallery" class="py-5">
 
     <div class="container">
 
         <div class="text-center mb-5">
-
             <h2 class="fw-bold">
-
                 Farm Gallery
-
             </h2>
 
             <p class="text-muted">
-
                 Take a look at our farm and poultry.
-
             </p>
-
         </div>
 
         <div class="row g-4">
 
-            <div class="col-lg-4 col-md-6">
-
-                <div class="gallery-item">
-
-                    <img src="{% static 'images/gallery/gallery1.jpg' %}"
-                         class="img-fluid">
-
-                </div>
-
-            </div>
+            {% for image in gallery %}
 
             <div class="col-lg-4 col-md-6">
-
-                <div class="gallery-item">
-
-                    <img src="{% static 'images/gallery/gallery2.jpg' %}"
-                         class="img-fluid">
-
-                </div>
-
+                <img src="{{ image.image.url }}"
+                     class="img-fluid rounded-4 shadow-sm"
+                     alt="{{ image.title }}">
             </div>
 
-            <div class="col-lg-4 col-md-6">
+            {% empty %}
 
-                <div class="gallery-item">
-
-                    <img src="{% static 'images/gallery/gallery3.jpg' %}"
-                         class="img-fluid">
-
-                </div>
-
+            <div class="text-center">
+                <h5>No gallery images uploaded yet.</h5>
             </div>
 
-            <div class="col-lg-4 col-md-6">
-
-                <div class="gallery-item">
-
-                    <img src="{% static 'images/gallery/gallery4.jpg' %}"
-                         class="img-fluid">
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-
-                <div class="gallery-item">
-
-                    <img src="{% static 'images/gallery/gallery5.jpg' %}"
-                         class="img-fluid">
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-
-                <div class="gallery-item">
-
-                    <img src="{% static 'images/gallery/gallery6.jpg' %}"
-                         class="img-fluid">
-
-                </div>
-
-            </div>
+            {% endfor %}
 
         </div>
 
     </div>
 
 </section>
+<!-- ================= TESTIMONIALS ================= -->
 
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                What Our Customers Say
+            </h2>
+
+            <p class="text-muted">
+                Trusted by poultry farmers and bird lovers.
+            </p>
+
+        </div>
+
+        <div class="row">
+
+            {% for review in testimonials %}
+
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <div class="card border-0 shadow rounded-4 h-100">
+
+                    <div class="card-body text-center">
+
+                        {% if review.photo %}
+
+                        <img src="{{ review.photo.url }}"
+                             class="rounded-circle mb-3"
+                             width="90"
+                             height="90"
+                             style="object-fit:cover;">
+
+                        {% else %}
+
+                        <img src="https://ui-avatars.com/api/?name={{ review.name }}"
+                             class="rounded-circle mb-3">
+
+                        {% endif %}
+
+                        <h5 class="fw-bold">
+                            {{ review.name }}
+                        </h5>
+
+                        <div class="mb-3">
+
+                            {% for i in "12345" %}
+
+                                {% if forloop.counter <= review.rating %}
+
+                                    <span class="text-warning fs-5">★</span>
+
+                                {% else %}
+
+                                    <span class="text-secondary fs-5">☆</span>
+
+                                {% endif %}
+
+                            {% endfor %}
+
+                        </div>
+
+                        <p class="text-muted">
+                            "{{ review.review }}"
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% empty %}
+
+            <div class="text-center">
+
+                <p>No customer reviews available yet.</p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
 
 <!-- ================= STATISTICS ================= -->
 
@@ -524,131 +564,6 @@
                 <h2 class="counter mt-3">8+</h2>
 
                 <p>Years of Experience</p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= Testimonials ================= -->
-
-<section class="py-5 bg-light">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-
-            <h2 class="fw-bold">
-                What Our Customers Say
-            </h2>
-
-            <p class="text-muted">
-                Trusted by poultry farmers across the region.
-            </p>
-
-        </div>
-
-        <div class="row g-4">
-
-            <div class="col-lg-4">
-
-                <div class="testimonial-card">
-
-                    <div class="stars mb-3">
-
-                        ★★★★★
-
-                    </div>
-
-                    <p>
-
-                        "The quality of the rooster exceeded my expectations.
-                        Healthy, active, and exactly as described."
-
-                    </p>
-
-                    <h5 class="mt-4 mb-0">
-
-                        Ramesh Kumar
-
-                    </h5>
-
-                    <small class="text-muted">
-
-                        Hyderabad
-
-                    </small>
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-4">
-
-                <div class="testimonial-card">
-
-                    <div class="stars mb-3">
-
-                        ★★★★★
-
-                    </div>
-
-                    <p>
-
-                        "Very good service. The chicks were healthy and safely
-                        delivered. I will definitely buy again."
-
-                    </p>
-
-                    <h5 class="mt-4 mb-0">
-
-                        Praveen
-
-                    </h5>
-
-                    <small class="text-muted">
-
-                        Wanaparthy
-
-                    </small>
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-4">
-
-                <div class="testimonial-card">
-
-                    <div class="stars mb-3">
-
-                        ★★★★★
-
-                    </div>
-
-                    <p>
-
-                        "Excellent bloodline and genuine guidance from SS Farms.
-                        Highly recommended."
-
-                    </p>
-
-                    <h5 class="mt-4 mb-0">
-
-                        Srinivas
-
-                    </h5>
-
-                    <small class="text-muted">
-
-                        Mahabubnagar
-
-                    </small>
-
-                </div>
 
             </div>
 
