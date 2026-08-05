@@ -1,0 +1,230 @@
+[
+  {
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+      "name": "Hatching Eggs",
+      "icon": "≡ƒÑÜ"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+      "name": "Feed",
+      "icon": "≡ƒî╛"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 5,
+    "fields": {
+      "name": "Medicines",
+      "icon": "≡ƒÆè"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 6,
+    "fields": {
+      "name": "Accessories",
+      "icon": "≡ƒ¢Æ"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 8,
+    "fields": {
+      "name": "Chicks",
+      "icon": "≡ƒÉñ"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 9,
+    "fields": {
+      "name": "Roosters",
+      "icon": "≡ƒÉô"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "category": 9,
+      "name": "Bhimavaram Assele Rooster",
+      "image": "products/images_ik3GYBJ.jpg",
+      "description": "Offering a premium  14 month-old purebred [Breed, e.g., Asil / Kelso] gamecock. Bred from a proven, championship bloodline. Exceptional stance, deep chest, and striking plumage. Highly intelligent, agile, and displaying remarkable endurance. Fully vaccinated and meticulously conditioned. Ideal for dedicated breeders and serious enthusiasts looking to upgrade their stock. Serious inquiries only. Contact [Phone/Email] for pedigree and viewing.",
+      "price": "15000.00",
+      "stock": 2,
+      "status": "In Stock",
+      "whatsapp_number": "8790733189",
+      "created_at": "2026-07-03T07:43:28.813Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "category": 8,
+      "name": "Bhimavaram Assele chick",
+      "image": "products/pngtree-three-baby-chickens-png-image_16159044_AuEAoCf.png",
+      "description": "These adorable, healthy, and vaccinated one month-old chicks are available now near Hyderabad. Priced at just Γé╣120 each, they are the perfect foundation for starting a high-yielding backyard flock or commercial setup.",
+      "price": "1500.00",
+      "stock": 10,
+      "status": "In Stock",
+      "whatsapp_number": "918790733189",
+      "created_at": "2026-07-03T07:45:23.263Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "category": 9,
+      "name": "red rooster",
+      "image": "products/images_1.jpg",
+      "description": "This exclusive item brings immediate value, purpose, and distinction to your environment. It blends reliable functionality with a unique presence, making it a perfect asset for anyone seeking quality and long-term satisfaction. Whether you want to enhance your daily routine or add a standout feature to your collection, this choice delivers exceptional results.",
+      "price": "14999.00",
+      "stock": 1,
+      "status": "In Stock",
+      "whatsapp_number": "8790733189",
+      "created_at": "2026-07-03T15:47:27.036Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "category": 9,
+      "name": "black rooster",
+      "image": "products/dc1a1e0687d8e5cf9d21ca173650b2d3.jpg",
+      "description": "This exclusive item brings immediate value, purpose, and distinction to your environment. It blends reliable functionality with a unique presence, making it a perfect asset for anyone seeking quality and long-term satisfaction. Whether you want to enhance your daily routine or add a standout feature to your collection, this choice delivers exceptional results.",
+      "price": "13999.00",
+      "stock": 1,
+      "status": "In Stock",
+      "whatsapp_number": "8",
+      "created_at": "2026-07-03T15:48:36.816Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "category": 5,
+      "name": "chick vaction",
+      "image": "products/images_2.jpg",
+      "description": "This exclusive item brings immediate value, purpose, and distinction to your environment. It blends reliable functionality with a unique presence, making it a perfect asset for anyone seeking quality and long-term satisfaction. Whether you want to enhance your daily routine or add a standout feature to your collection, this choice delivers exceptional results.",
+      "price": "500.00",
+      "stock": 8,
+      "status": "In Stock",
+      "whatsapp_number": "8790733189",
+      "created_at": "2026-07-03T15:49:27.664Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "category": 5,
+      "name": "deworming medicine",
+      "image": "products/images_3.jpg",
+      "description": "This exclusive item brings immediate value, purpose, and distinction to your environment. It blends reliable functionality with a unique presence, making it a perfect asset for anyone seeking quality and long-term satisfaction. Whether you want to enhance your daily routine or add a standout feature to your collection, this choice delivers exceptional results.",
+      "price": "700.00",
+      "stock": 10,
+      "status": "In Stock",
+      "whatsapp_number": "8790733189",
+      "created_at": "2026-07-03T15:50:20.382Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "category": 4,
+      "name": "chick feed",
+      "image": "products/images_4.jpg",
+      "description": "This exclusive item brings immediate value, purpose, and distinction to your environment. It blends reliable functionality with a unique presence, making it a perfect asset for anyone seeking quality and long-term satisfaction. Whether you want to enhance your daily routine or add a standout feature to your collection, this choice delivers exceptional results.",
+      "price": "1000.00",
+      "stock": 5,
+      "status": "In Stock",
+      "whatsapp_number": "918790733189",
+      "created_at": "2026-07-03T15:51:07.117Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+      "category": 4,
+      "name": "hen feed",
+      "image": "products/images_5.jpg",
+      "description": "This exclusive item brings immediate value, purpose, and distinction to your environment. It blends reliable functionality with a unique presence, making it a perfect asset for anyone seeking quality and long-term satisfaction. Whether you want to enhance your daily routine or add a standout feature to your collection, this choice delivers exceptional results.",
+      "price": "1200.00",
+      "stock": 10,
+      "status": "In Stock",
+      "whatsapp_number": "8790733189",
+      "created_at": "2026-07-03T15:51:44.363Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+      "category": 3,
+      "name": "brown eggs",
+      "image": "products/images_6.jpg",
+      "description": "This exclusive item brings immediate value, purpose, and distinction to your environment. It blends reliable functionality with a unique presence, making it a perfect asset for anyone seeking quality and long-term satisfaction. Whether you want to enhance your daily routine or add a standout feature to your collection, this choice delivers exceptional results.",
+      "price": "400.00",
+      "stock": 10,
+      "status": "In Stock",
+      "whatsapp_number": "918790733189",
+      "created_at": "2026-07-03T15:52:21.327Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+      "category": 3,
+      "name": "white eggs",
+      "image": "products/images_7.jpg",
+      "description": "This exclusive item brings immediate value, purpose, and distinction to your environment. It blends reliable functionality with a unique presence, making it a perfect asset for anyone seeking quality and long-term satisfaction. Whether you want to enhance your daily routine or add a standout feature to your collection, this choice delivers exceptional results.",
+      "price": "300.00",
+      "stock": 50,
+      "status": "In Stock",
+      "whatsapp_number": "8790733189",
+      "created_at": "2026-07-03T15:52:57.304Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+      "category": 6,
+      "name": "water drinker",
+      "image": "products/images_8.jpg",
+      "description": "This exclusive item brings immediate value, purpose, and distinction to your environment. It blends reliable functionality with a unique presence, making it a perfect asset for anyone seeking quality and long-term satisfaction. Whether you want to enhance your daily routine or add a standout feature to your collection, this choice delivers exceptional results.",
+      "price": "400.00",
+      "stock": 10,
+      "status": "In Stock",
+      "whatsapp_number": "918790733189",
+      "created_at": "2026-07-03T15:53:46.526Z"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+      "category": 6,
+      "name": "feeder",
+      "image": "products/images_10.jpg",
+      "description": "This exclusive item brings immediate value, purpose, and distinction to your environment. It blends reliable functionality with a unique presence, making it a perfect asset for anyone seeking quality and long-term satisfaction. Whether you want to enhance your daily routine or add a standout feature to your collection, this choice delivers exceptional results.",
+      "price": "400.00",
+      "stock": 10,
+      "status": "In Stock",
+      "whatsapp_number": "8790733189",
+      "created_at": "2026-07-03T15:54:17.833Z"
+    }
+  }
+]

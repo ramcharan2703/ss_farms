@@ -39,9 +39,13 @@ def cart(request):
 
     message = "Hello SS Farms,%0A%0AI'm interested in the following products:%0A%0A"
 
-    for product_id, quantity in cart.items():
-
-        product = get_object_or_404(Product, id=product_id)
+    for product_id, quantity in list(cart.items()):
+        try:
+            product = Product.objects.get(id=product_id)
+        except Product.DoesNotExist:
+            del cart[product_id]
+            request.session["cart"] = cart
+            continue
 
         subtotal = product.price * quantity
         total += subtotal
