@@ -6,10 +6,10 @@ from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 
 from .views import robots_txt
-from .sitemaps import StaticViewSitemap
-
+from .sitemaps import StaticViewSitemap, ProductSitemap
 sitemaps = {
     "static": StaticViewSitemap,
+    "products": ProductSitemap,
 }
 
 urlpatterns = [
