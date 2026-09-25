@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% block title %}
 SS Farms Wanaparthy | Premium Bheemavaram Fighting Roosters & Hatching Eggs
 {% endblock %}
@@ -6,6 +7,7 @@ SS Farms Wanaparthy | Premium Bheemavaram Fighting Roosters & Hatching Eggs
 {% block meta_description %}
 SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatching eggs, poultry feed, medicines and accessories across Telangana, Andhra Pradesh, Karnataka and all over India.
 {% endblock %}
+
 {% load static %}
 
 {% block content %}
@@ -34,10 +36,8 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
                 </h1>
 
                 <p class="lead mb-4">
-
                     Healthy birds, pure bloodlines and trusted breeding
                     from SS Farms Wanaparthy.
-
                 </p>
 
                 <div class="d-flex gap-3 flex-wrap">
@@ -66,6 +66,7 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
 </section>
 
+
 <!-- ================= WHY CHOOSE US ================= -->
 
 <section class="py-5 bg-light">
@@ -75,15 +76,11 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
         <div class="text-center mb-5">
 
             <h2 class="fw-bold">
-
                 Why Choose SS Farms?
-
             </h2>
 
             <p class="text-muted">
-
                 We raise healthy birds using quality breeding practices.
-
             </p>
 
         </div>
@@ -96,25 +93,23 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
                     <div class="feature-icon">
 
-                        <i class="bi bi-award-fill"></i>
+                        <i class="bi bi-award-fill"
+                           aria-hidden="true"></i>
 
                     </div>
 
-                    <h4>
-
+                    <h3 class="h4">
                         Pure Bloodline
-
-                    </h4>
+                    </h3>
 
                     <p>
-
                         Carefully selected original fighting breeds.
-
                     </p>
 
                 </div>
 
             </div>
+
 
             <div class="col-lg-3 col-md-6">
 
@@ -122,25 +117,23 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
                     <div class="feature-icon">
 
-                        <i class="bi bi-heart-pulse-fill"></i>
+                        <i class="bi bi-heart-pulse-fill"
+                           aria-hidden="true"></i>
 
                     </div>
 
-                    <h4>
-
+                    <h3 class="h4">
                         Healthy Birds
-
-                    </h4>
+                    </h3>
 
                     <p>
-
                         Proper nutrition, hygiene and vaccination.
-
                     </p>
 
                 </div>
 
             </div>
+
 
             <div class="col-lg-3 col-md-6">
 
@@ -148,25 +141,23 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
                     <div class="feature-icon">
 
-                        <i class="bi bi-truck"></i>
+                        <i class="bi bi-truck"
+                           aria-hidden="true"></i>
 
                     </div>
 
-                    <h4>
-
+                    <h3 class="h4">
                         Safe Delivery
-
-                    </h4>
+                    </h3>
 
                     <p>
-
                         Birds transported safely with proper care.
-
                     </p>
 
                 </div>
 
             </div>
+
 
             <div class="col-lg-3 col-md-6">
 
@@ -174,20 +165,17 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
                     <div class="feature-icon">
 
-                        <i class="bi bi-whatsapp"></i>
+                        <i class="bi bi-whatsapp"
+                           aria-hidden="true"></i>
 
                     </div>
 
-                    <h4>
-
+                    <h3 class="h4">
                         Easy Ordering
-
-                    </h4>
+                    </h3>
 
                     <p>
-
                         Order directly through WhatsApp anytime.
-
                     </p>
 
                 </div>
@@ -199,6 +187,7 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
     </div>
 
 </section>
+
 
 <!-- ================= CATEGORIES ================= -->
 
@@ -209,75 +198,89 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
         <div class="text-center mb-5">
 
             <h2 class="fw-bold">
-
                 Our Categories
-
             </h2>
 
             <p class="text-muted">
-
                 Browse products by category.
-
             </p>
 
         </div>
 
         <div class="row g-4">
 
-    {% for category in categories %}
+            {% for category in categories %}
 
-    <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6">
 
-        <a href="{% url 'products' %}?category={{ category.id }}"
-           class="text-decoration-none text-dark">
+                <a href="{% url 'products' %}?category={{ category.id }}"
+                   class="text-decoration-none text-dark">
 
-            <div class="category-card">
+                    <div class="category-card">
 
-                <div class="feature-category-icon">
+                        <div class="feature-category-icon">
 
-                    {% if category.name == "Roosters" %}
-                        <i class="bi bi-feather"></i>
+                            {% if category.name == "Roosters" %}
 
-                    {% elif category.name == "Chicks" %}
-                        <i class="bi bi-emoji-smile"></i>
+                                <i class="bi bi-feather"
+                                   aria-hidden="true"></i>
 
-                    {% elif category.name == "Hatching Eggs" %}
-                        <i class="bi bi-egg-fill"></i>
+                            {% elif category.name == "Chicks" %}
 
-                    {% elif category.name == "Feed" %}
-                        <i class="bi bi-flower1"></i>
+                                <i class="bi bi-emoji-smile"
+                                   aria-hidden="true"></i>
 
-                    {% elif category.name == "Medicines" %}
-                        <i class="bi bi-capsule-pill"></i>
+                            {% elif category.name == "Hatching Eggs" %}
 
-                    {% elif category.name == "Accessories" %}
-                        <i class="bi bi-basket2-fill"></i>
+                                <i class="bi bi-egg-fill"
+                                   aria-hidden="true"></i>
 
-                    {% else %}
-                        <i class="bi bi-grid"></i>
-                    {% endif %}
+                            {% elif category.name == "Feed" %}
 
-                </div>
+                                <i class="bi bi-flower1"
+                                   aria-hidden="true"></i>
 
-                <h4>{{ category.name }}</h4>
+                            {% elif category.name == "Medicines" %}
 
-                <p>{{ category.description }}</p>
+                                <i class="bi bi-capsule-pill"
+                                   aria-hidden="true"></i>
+
+                            {% elif category.name == "Accessories" %}
+
+                                <i class="bi bi-basket2-fill"
+                                   aria-hidden="true"></i>
+
+                            {% else %}
+
+                                <i class="bi bi-grid"
+                                   aria-hidden="true"></i>
+
+                            {% endif %}
+
+                        </div>
+
+                        <h3 class="h4">
+                            {{ category.name }}
+                        </h3>
+
+                        <p>
+                            {{ category.description }}
+                        </p>
+
+                    </div>
+
+                </a>
 
             </div>
 
-        </a>
+            {% endfor %}
 
-    </div>
-
-    {% endfor %}
-
-</div>
+        </div>
 
     </div>
 
 </section>
 
-<!-- ================= FEATURED PRODUCTS STARTS HERE ================= -->
 
 <!-- ================= FEATURED PRODUCTS ================= -->
 
@@ -316,32 +319,24 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
                         </a>
 
                         <span class="badge bg-success position-absolute top-0 start-0 m-3">
-
                             {{ product.status }}
-
                         </span>
 
                     </div>
 
                     <div class="card-body">
 
-                        <h4 class="fw-bold">
-
+                        <h3 class="h4 fw-bold">
                             {{ product.name }}
-
-                        </h4>
+                        </h3>
 
                         <p class="text-muted">
-
                             {{ product.description|truncatewords:14 }}
-
                         </p>
 
-                        <h3 class="text-success fw-bold">
-
+                        <p class="h4 text-success fw-bold">
                             ₹{{ product.price }}
-
-                        </h3>
+                        </p>
 
                     </div>
 
@@ -359,7 +354,8 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
                             <a href="https://wa.me/{{ product.whatsapp_number }}?text=Hi, I'm interested in {{ product.name }}"
                                class="btn btn-success">
 
-                                <i class="bi bi-whatsapp"></i>
+                                <i class="bi bi-whatsapp"
+                                   aria-hidden="true"></i>
 
                                 Order on WhatsApp
 
@@ -377,7 +373,9 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
             <div class="col-12 text-center">
 
-                <h3>No Products Available</h3>
+                <h3 class="h4">
+                    No Products Available
+                </h3>
 
             </div>
 
@@ -388,6 +386,7 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
     </div>
 
 </section>
+
 
 <!-- ================= FARM GALLERY ================= -->
 
@@ -396,6 +395,7 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
     <div class="container">
 
         <div class="text-center mb-5">
+
             <h2 class="fw-bold">
                 Farm Gallery
             </h2>
@@ -403,6 +403,7 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
             <p class="text-muted">
                 Take a look at our farm and poultry.
             </p>
+
         </div>
 
         <div class="row g-4">
@@ -410,15 +411,21 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
             {% for image in gallery %}
 
             <div class="col-lg-4 col-md-6">
+
                 <img src="{{ image.image.url }}"
                      class="img-fluid rounded-4 shadow-sm"
                      alt="{{ image.title }}">
+
             </div>
 
             {% empty %}
 
             <div class="text-center">
-                <h5>No gallery images uploaded yet.</h5>
+
+                <h3 class="h4">
+                    No gallery images uploaded yet.
+                </h3>
+
             </div>
 
             {% endfor %}
@@ -428,6 +435,8 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
     </div>
 
 </section>
+
+
 <!-- ================= TESTIMONIALS ================= -->
 
 <section class="py-5 bg-light">
@@ -458,35 +467,45 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
                         {% if review.photo %}
 
-                        <img src="{{ testimonial.image.url }}"
-     class="rounded-circle mb-3"
-     width="90"
-     height="90"
-     style="object-fit:cover;"
-     alt="{{ testimonial.name }} testimonial">
+                        <img src="{{ review.photo.url }}"
+                             class="rounded-circle mb-3"
+                             width="90"
+                             height="90"
+                             style="object-fit:cover;"
+                             alt="{{ review.name }} testimonial">
 
                         {% else %}
 
                         <img src="https://ui-avatars.com/api/?name={{ review.name }}"
-                             class="rounded-circle mb-3">
+                             class="rounded-circle mb-3"
+                             width="90"
+                             height="90"
+                             alt="{{ review.name }} profile">
 
                         {% endif %}
 
-                        <h5 class="fw-bold">
+                        <h3 class="h5 fw-bold">
                             {{ review.name }}
-                        </h5>
+                        </h3>
 
-                        <div class="mb-3">
+                        <div class="mb-3"
+                             aria-label="{{ review.rating }} out of 5 stars">
 
                             {% for i in "12345" %}
 
                                 {% if forloop.counter <= review.rating %}
 
-                                    <span class="text-warning fs-5">★</span>
+                                    <span class="text-warning fs-5"
+                                          aria-hidden="true">
+                                        ★
+                                    </span>
 
                                 {% else %}
 
-                                    <span class="text-secondary fs-5">☆</span>
+                                    <span class="text-secondary fs-5"
+                                          aria-hidden="true">
+                                        ☆
+                                    </span>
 
                                 {% endif %}
 
@@ -508,7 +527,9 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
             <div class="text-center">
 
-                <p>No customer reviews available yet.</p>
+                <p>
+                    No customer reviews available yet.
+                </p>
 
             </div>
 
@@ -520,6 +541,7 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
 </section>
 
+
 <!-- ================= STATISTICS ================= -->
 
 <section class="py-5 bg-success text-white">
@@ -530,41 +552,64 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
             <div class="col-lg-3 col-6 mb-4">
 
-                <i class="bi bi-feather display-4"></i>
+                <i class="bi bi-feather display-4"
+                   aria-hidden="true"></i>
 
-                <h2 class="counter mt-3">500+</h2>
+                <h2 class="counter mt-3">
+                    500+
+                </h2>
 
-                <p>Premium Birds Sold</p>
-
-            </div>
-
-            <div class="col-lg-3 col-6 mb-4">
-
-                <i class="bi bi-egg-fill display-4"></i>
-
-                <h2 class="counter mt-3">10000+</h2>
-
-                <p>Hatching Eggs Sold</p>
+                <p>
+                    Premium Birds Sold
+                </p>
 
             </div>
 
+
             <div class="col-lg-3 col-6 mb-4">
 
-                <i class="bi bi-people-fill display-4"></i>
+                <i class="bi bi-egg-fill display-4"
+                   aria-hidden="true"></i>
 
-                <h2 class="counter mt-3">800+</h2>
+                <h2 class="counter mt-3">
+                    10000+
+                </h2>
 
-                <p>Happy Customers</p>
+                <p>
+                    Hatching Eggs Sold
+                </p>
 
             </div>
 
+
             <div class="col-lg-3 col-6 mb-4">
 
-                <i class="bi bi-award-fill display-4"></i>
+                <i class="bi bi-people-fill display-4"
+                   aria-hidden="true"></i>
 
-                <h2 class="counter mt-3">8+</h2>
+                <h2 class="counter mt-3">
+                    800+
+                </h2>
 
-                <p>Years of Experience</p>
+                <p>
+                    Happy Customers
+                </p>
+
+            </div>
+
+
+            <div class="col-lg-3 col-6 mb-4">
+
+                <i class="bi bi-award-fill display-4"
+                   aria-hidden="true"></i>
+
+                <h2 class="counter mt-3">
+                    8+
+                </h2>
+
+                <p>
+                    Years of Experience
+                </p>
 
             </div>
 
@@ -573,6 +618,7 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
     </div>
 
 </section>
+
 
 <!-- ================= FIND US ================= -->
 
@@ -611,21 +657,21 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
             </div>
 
+
             <!-- Contact Info -->
 
             <div class="col-lg-5">
 
                 <div class="contact-card">
 
-                    <h3 class="mb-4">
-
+                    <h2 class="h3 mb-4">
                         SS Farms
-
-                    </h3>
+                    </h2>
 
                     <p>
 
-                        <i class="bi bi-geo-alt-fill text-success me-2"></i>
+                        <i class="bi bi-geo-alt-fill text-success me-2"
+                           aria-hidden="true"></i>
 
                         Wanaparthy, Telangana
 
@@ -633,7 +679,8 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
                     <p>
 
-                        <i class="bi bi-telephone-fill text-success me-2"></i>
+                        <i class="bi bi-telephone-fill text-success me-2"
+                           aria-hidden="true"></i>
 
                         +91 8790733189
 
@@ -641,7 +688,8 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
                     <p>
 
-                        <i class="bi bi-envelope-fill text-success me-2"></i>
+                        <i class="bi bi-envelope-fill text-success me-2"
+                           aria-hidden="true"></i>
 
                         ssfarmswanaparthy@gmail.com
 
@@ -649,9 +697,11 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
                     <a href="https://maps.app.goo.gl/gGbrQm8dKydw6gWD8"
                        target="_blank"
+                       rel="noopener"
                        class="btn btn-success mt-3">
 
-                        <i class="bi bi-geo-alt"></i>
+                        <i class="bi bi-geo-alt"
+                           aria-hidden="true"></i>
 
                         Open in Google Maps
 
@@ -666,4 +716,5 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
     </div>
 
 </section>
+
 {% endblock %}
