@@ -312,9 +312,11 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
                         <a href="{% url 'product_detail' product.id %}">
 
-                            <img src="{{ product.image.url }}"
-                                 class="product-image w-100"
-                                 alt="{{ product.name }}">
+                           <img src="{{ product.image.url }}"
+     class="product-image w-100"
+     alt="{{ product.name }}"
+     loading="lazy"
+     decoding="async">
 
                         </a>
 
@@ -413,9 +415,10 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
             <div class="col-lg-4 col-md-6">
 
                 <img src="{{ image.image.url }}"
-                     class="img-fluid rounded-4 shadow-sm"
-                     alt="{{ image.title }}">
-
+     class="img-fluid rounded-4 shadow-sm"
+     alt="{{ image.title }}"
+     loading="lazy"
+     decoding="async">
             </div>
 
             {% empty %}
@@ -468,20 +471,23 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
                         {% if review.photo %}
 
                         <img src="{{ review.photo.url }}"
-                             class="rounded-circle mb-3"
-                             width="90"
-                             height="90"
-                             style="object-fit:cover;"
-                             alt="{{ review.name }} testimonial">
+     class="rounded-circle mb-3"
+     width="90"
+     height="90"
+     style="object-fit:cover;"
+     alt="{{ review.name }} testimonial"
+     loading="lazy"
+     decoding="async">
 
                         {% else %}
 
-                        <img src="https://ui-avatars.com/api/?name={{ review.name }}"
-                             class="rounded-circle mb-3"
-                             width="90"
-                             height="90"
-                             alt="{{ review.name }} profile">
-
+                       <img src="https://ui-avatars.com/api/?name={{ review.name }}"
+     class="rounded-circle mb-3"
+     width="90"
+     height="90"
+     alt="{{ review.name }} profile"
+     loading="lazy"
+     decoding="async">
                         {% endif %}
 
                         <h3 class="h5 fw-bold">
