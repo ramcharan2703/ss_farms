@@ -8,201 +8,324 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{% block title %}SS Farms Wanaparthy | Premium Bheemavaram Fighting Roosters & Hatching Eggs{% endblock %}</title>
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-      content="SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatching eggs, poultry feed, medicines and accessories across Telangana, Andhra Pradesh, Karnataka and all over India.">
-<link rel="canonical" href="https://ss-farms.onrender.com/">
+    <meta name="description"
+          content="SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatching eggs, poultry feed, medicines and accessories across Telangana, Andhra Pradesh, Karnataka and all over India.">
 
-<meta name="keywords"
-      content="Bheemavaram Fighting Roosters, Bheemavaram Roosters, Fighting Rooster Chicks, Hatching Eggs, Pandhem Kollu, Pandhem Kodi, Pandhem Kodipillalu, Aseel Roosters, Aseel Chicks, Poultry Farm Wanaparthy, Poultry Farm Telangana, SS Farms Wanaparthy">
+    <link rel="canonical" href="https://ss-farms.onrender.com/">
 
-<meta name="author" content="SS Farms Wanaparthy">
+    <meta name="keywords"
+          content="Bheemavaram Fighting Roosters, Bheemavaram Roosters, Fighting Rooster Chicks, Hatching Eggs, Pandhem Kollu, Pandhem Kodi, Pandhem Kodipillalu, Aseel Roosters, Aseel Chicks, Poultry Farm Wanaparthy, Poultry Farm Telangana, SS Farms Wanaparthy">
 
-<meta name="robots" content="index, follow">
-<meta property="og:type" content="website">
+    <meta name="author" content="SS Farms Wanaparthy">
 
-<meta property="og:site_name" content="SS Farms Wanaparthy">
+    <meta name="robots" content="index, follow">
 
-<meta property="og:title"
-      content="{% block og_title %}SS Farms Wanaparthy | Premium Bheemavaram Fighting Roosters & Hatching Eggs{% endblock %}">
+    <!-- Open Graph -->
 
-<meta property="og:description"
-      content="{% block og_description %}Premium Bheemavaram Fighting Roosters, chicks, hatching eggs, poultry feed, medicines and accessories across Telangana, Andhra Pradesh, Karnataka and all over India.{% endblock %}">
+    <meta property="og:type" content="website">
 
-<meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:site_name" content="SS Farms Wanaparthy">
 
-<meta property="og:image"
-      content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}">
+    <meta property="og:title"
+          content="{% block og_title %}SS Farms Wanaparthy | Premium Bheemavaram Fighting Roosters & Hatching Eggs{% endblock %}">
 
-<meta property="og:locale" content="en_IN">
-<meta name="twitter:card" content="summary_large_image">
+    <meta property="og:description"
+          content="{% block og_description %}Premium Bheemavaram Fighting Roosters, chicks, hatching eggs, poultry feed, medicines and accessories across Telangana, Andhra Pradesh, Karnataka and all over India.{% endblock %}">
 
-<meta name="twitter:title"
-      content="{% block twitter_title %}SS Farms Wanaparthy{% endblock %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
 
-<meta name="twitter:description"
-      content="{% block twitter_description %}Premium Bheemavaram Fighting Roosters, chicks and hatching eggs.{% endblock %}">
+    <meta property="og:image"
+          content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}">
 
-<meta name="twitter:image"
-      content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter / X -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title"
+          content="{% block twitter_title %}SS Farms Wanaparthy{% endblock %}">
+
+    <meta name="twitter:description"
+          content="{% block twitter_description %}Premium Bheemavaram Fighting Roosters, chicks and hatching eggs.{% endblock %}">
+
+    <meta name="twitter:image"
+          content="{{ request.scheme }}://{{ request.get_host }}{% static 'images/logo.png' %}">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <!-- Google Font -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
 
-    <!-- Your CSS -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Custom CSS -->
 
-    {% load static %}
+    <link rel="stylesheet"
+          href="{% static 'css/style.css' %}">
 
-<link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Store",
-  "name": "SS Farms Wanaparthy",
-  "url": "https://ss-farms.onrender.com",
-  "telephone": "+91 8790733189",
-  "email": "ssfarmswanaparthy@gmail.com",
+    <!-- Favicon -->
 
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Wanaparthy",
-    "addressRegion": "Telangana",
-    "addressCountry": "IN"
-  },
+    <link rel="icon"
+          type="image/png"
+          href="{% static 'images/logo.png' %}">
 
-  "areaServed": [
-    "Wanaparthy",
-    "Mahabubnagar",
-    "Hyderabad",
-    "Telangana",
-    "Andhra Pradesh",
-    "Karnataka",
-    "India"
-  ],
+    <!-- Structured Data -->
 
-  "sameAs": [
-    "https://www.instagram.com/ss_farms_wanaparthy/",
-    "https://www.youtube.com/@Ssfarmswanaparthy"
-  ]
-}
-</script>
-<meta name="google-site-verification" content="7pKyytIITP6fTXbxMdYh2U9THDTaFc_434etpTUNDDQ" />
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "SS Farms Wanaparthy",
+        "url": "https://ss-farms.onrender.com",
+        "telephone": "+91 8790733189",
+        "email": "ssfarmswanaparthy@gmail.com",
+
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Wanaparthy",
+            "addressRegion": "Telangana",
+            "addressCountry": "IN"
+        },
+
+        "areaServed": [
+            "Wanaparthy",
+            "Mahabubnagar",
+            "Hyderabad",
+            "Telangana",
+            "Andhra Pradesh",
+            "Karnataka",
+            "India"
+        ],
+
+        "sameAs": [
+            "https://www.instagram.com/ss_farms_wanaparthy/",
+            "https://www.youtube.com/@Ssfarmswanaparthy"
+        ]
+    }
+    </script>
+
+    <meta name="google-site-verification"
+          content="7pKyytIITP6fTXbxMdYh2U9THDTaFc_434etpTUNDDQ" />
+
 </head>
+
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-    <div class="container">
 
-        <a class="navbar-brand d-flex align-items-center" href="/">
-            <img src="{% static 'images/logo.png' %}"
-                 alt="SS Farms"
-                 width="55"
-                 height="55"
-                 class="rounded-circle me-2">
+        <div class="container">
 
-            <div>
-                <h5 class="mb-0 fw-bold text-success">SS Farms</h5>
-                <small class="text-muted">Wanaparthy</small>
+            <!-- Brand -->
+
+            <a class="navbar-brand d-flex align-items-center"
+               href="/">
+
+                <img src="{% static 'images/logo.png' %}"
+                     alt="SS Farms"
+                     width="55"
+                     height="55"
+                     class="rounded-circle me-2">
+
+                <div>
+
+                    <h5 class="mb-0 fw-bold text-success">
+                        SS Farms
+                    </h5>
+
+                    <small class="text-muted">
+                        Wanaparthy
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <!-- Mobile Menu Button -->
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <!-- Navigation -->
+
+            <div class="collapse navbar-collapse"
+                 id="navbarNav">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <!-- Home -->
+
+                    <li class="nav-item">
+
+                        <a class="nav-link active"
+                           href="/">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Products -->
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="{% url 'products' %}">
+
+                            Products
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Gallery -->
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="{% url 'home' %}#gallery">
+
+                            Gallery
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Contact -->
+
+                    <li class="nav-item">
+
+                        <a class="nav-link"
+                           href="{% url 'contact' %}">
+
+                            Contact
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Cart -->
+
+                    <li class="nav-item">
+
+                        <a class="nav-link position-relative"
+                           href="{% url 'cart' %}">
+
+                            <i class="bi bi-cart3"
+                               aria-hidden="true"></i>
+
+                            Cart
+
+                            {% if cart_count > 0 %}
+
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+                                    {{ cart_count }}
+
+                                </span>
+
+                            {% endif %}
+
+                        </a>
+
+                    </li>
+
+
+                    <!-- Pre-Order -->
+
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+
+                        <a href="{% url 'preorder' %}"
+                           class="btn btn-success rounded-pill px-4">
+
+                            Pre-Order
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
             </div>
-        </a>
-
-        <button class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-
-            <span class="navbar-toggler-icon"></span>
-
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-
-            <ul class="navbar-nav ms-auto align-items-lg-center">
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="/">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'products' %}">
-    Products
-</a>
-                </li>
-
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home' %}#gallery">Gallery</a>
-                </li>
-
-                <li class="nav-item">
-                   <a class="nav-link" href="{% url 'contact' %}">
-    Contact
-</a>
-                </li>
-<li class="nav-item">
-   <a class="nav-link position-relative" href="{% url 'cart' %}">
-    <i class="bi bi-cart3"></i> Cart
-
-    {% if cart_count > 0 %}
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            {{ cart_count }}
-        </span>
-    {% endif %}
-</a>
-</li>
-
-                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                    <a href="{% url 'preorder' %}" class="btn btn-success rounded-pill px-4">
-                        Pre-Order
-                    </a>
-                </li>
-
-
-
-
-            </ul>
 
         </div>
 
-    </div>
-</nav>
+    </nav>
+
 </header>
 
+
+<!-- ================= MAIN CONTENT ================= -->
+
 <main>
+
     {% if messages %}
-<div class="container mt-3">
-    {% for message in messages %}
-        <div class="alert alert-success alert-dismissible fade show">
-            {{ message }}
-            <button type="button"
-                    class="btn-close"
-                    data-bs-dismiss="alert">
-            </button>
+
+        <div class="container mt-3">
+
+            {% for message in messages %}
+
+                <div class="alert alert-success alert-dismissible fade show">
+
+                    {{ message }}
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert"
+                            aria-label="Close">
+
+                    </button>
+
+                </div>
+
+            {% endfor %}
+
         </div>
-    {% endfor %}
-</div>
-{% endif %}
 
-{% block content %}
+    {% endif %}
 
-{% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
 
 </main>
+
 
 <!-- ================= FOOTER ================= -->
 
@@ -211,6 +334,7 @@
     <div class="container">
 
         <div class="row gy-4">
+
 
             <!-- Company -->
 
@@ -231,7 +355,8 @@
 
                 <p>
 
-                    <i class="bi bi-geo-alt-fill"></i>
+                    <i class="bi bi-geo-alt-fill"
+                       aria-hidden="true"></i>
 
                     Wanaparthy, Telangana
 
@@ -239,7 +364,8 @@
 
                 <p>
 
-                    <i class="bi bi-telephone-fill"></i>
+                    <i class="bi bi-telephone-fill"
+                       aria-hidden="true"></i>
 
                     +91 8790733189
 
@@ -247,13 +373,15 @@
 
                 <p>
 
-                    <i class="bi bi-envelope-fill"></i>
+                    <i class="bi bi-envelope-fill"
+                       aria-hidden="true"></i>
 
                     ssfarmswanaparthy@gmail.com
 
                 </p>
 
             </div>
+
 
             <!-- Quick Links -->
 
@@ -267,17 +395,42 @@
 
                 <ul class="list-unstyled">
 
-                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li>
 
-                    <li><a href="{% url 'products' %}">Products</a></li>
+                        <a href="{% url 'home' %}">
+                            Home
+                        </a>
 
-                    <li><a href="{% url 'preorder' %}">Pre Order</a></li>
+                    </li>
 
-                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li>
+
+                        <a href="{% url 'products' %}">
+                            Products
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="{% url 'preorder' %}">
+                            Pre Order
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="{% url 'contact' %}">
+                            Contact
+                        </a>
+
+                    </li>
 
                 </ul>
 
             </div>
+
 
             <!-- Categories -->
 
@@ -291,19 +444,28 @@
 
                 <ul class="list-unstyled">
 
-                    <li>Roosters</li>
+                    <li>
+                        Roosters
+                    </li>
 
-                    <li>Chicks</li>
+                    <li>
+                        Chicks
+                    </li>
 
-                    <li>Hatching Eggs</li>
+                    <li>
+                        Hatching Eggs
+                    </li>
 
-                    <li>Feed</li>
+                    <li>
+                        Feed
+                    </li>
 
                 </ul>
 
             </div>
 
-            <!-- Social -->
+
+            <!-- Social Media -->
 
             <div class="col-lg-3">
 
@@ -315,28 +477,55 @@
 
                 <div class="d-flex gap-3 mt-3">
 
-                    <a href="#" class="social-icon">
 
-                        <i class="bi bi-whatsapp"></i>
+                    <!-- Facebook -->
+
+                    <a href="#"
+                       class="social-icon"
+                       aria-label="Facebook">
+
+                        <i class="bi bi-facebook"
+                           aria-hidden="true"></i>
 
                     </a>
+
+
+                    <!-- Instagram -->
 
                     <a href="https://www.instagram.com/ss_farms_wanaparthy/"
-   target="_blank"
-   rel="noopener"class="social-icon">
+                       target="_blank"
+                       rel="noopener"
+                       class="social-icon"
+                       aria-label="SS Farms on Instagram">
 
-                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-instagram"
+                           aria-hidden="true"></i>
 
                     </a>
+
+
+                    <!-- YouTube -->
+
                     <a href="https://www.youtube.com/@Ssfarmswanaparthy"
-   target="_blank"
-   rel="noopener" class="social-icon">
-    <i class="bi bi-youtube"></i>
-</a>
+                       target="_blank"
+                       rel="noopener"
+                       class="social-icon"
+                       aria-label="SS Farms on YouTube">
 
-                    <a href="#" class="social-icon">
+                        <i class="bi bi-youtube"
+                           aria-hidden="true"></i>
 
-                        <i class="bi bi-facebook"></i>
+                    </a>
+
+
+                    <!-- WhatsApp -->
+
+                    <a href="#"
+                       class="social-icon"
+                       aria-label="WhatsApp">
+
+                        <i class="bi bi-whatsapp"
+                           aria-hidden="true"></i>
 
                     </a>
 
@@ -346,7 +535,11 @@
 
         </div>
 
+
         <hr class="border-secondary my-4">
+
+
+        <!-- Copyright -->
 
         <div class="text-center">
 
@@ -357,46 +550,60 @@
     </div>
 
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Bootstrap JavaScript -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
 <!-- Back To Top Button -->
 
-<button id="backToTop">
+<button id="backToTop"
+        type="button"
+        aria-label="Back to top">
 
-    <i class="bi bi-arrow-up"></i>
+    <i class="bi bi-arrow-up"
+       aria-hidden="true"></i>
 
 </button>
+
+
 <script>
 
 const backToTop = document.getElementById("backToTop");
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll", () => {
 
-    if(window.scrollY > 10){
+    if (window.scrollY > 10) {
 
-        backToTop.style.display="block";
+        backToTop.style.display = "block";
 
-    }
+    } else {
 
-    else{
-
-        backToTop.style.display="none";
+        backToTop.style.display = "none";
 
     }
 
 });
 
-backToTop.addEventListener("click",()=>{
+
+backToTop.addEventListener("click", () => {
 
     window.scrollTo({
 
-        top:0,
+        top: 0,
 
-        behavior:"smooth"
+        behavior: "smooth"
 
     });
 
 });
 
 </script>
+
+
 </body>
+
 </html>
