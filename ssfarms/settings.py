@@ -53,16 +53,16 @@ CSRF_TRUSTED_ORIGINS = [
 # -----------------------------------------------------------------------------
 
 INSTALLED_APPS = [
-    # Cloudinary storage must precede staticfiles per django-cloudinary-storage docs
-    "cloudinary_storage",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django.contrib.sitemaps",
+    # Cloudinary is used for media storage only; must follow staticfiles so WhiteNoise manages static assets
+    "cloudinary_storage",
     "cloudinary",
+    "django.contrib.sitemaps",
 
     # Local farm applications
     "core",
