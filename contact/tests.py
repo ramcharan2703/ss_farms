@@ -19,7 +19,7 @@ class ContactFormTests(TestCase):
         }
         response = self.client.post(reverse("contact"), data, follow=True)
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Your message has been sent successfully")
+        self.assertContains(response, "Your inquiry has been received successfully")
 
         # Verify record exists in database
         inquiry = ContactMessage.objects.filter(email="ramesh@example.com").first()

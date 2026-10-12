@@ -196,24 +196,32 @@ STORAGES = {
 
 WHATSAPP_NUMBER = os.environ.get("WHATSAPP_NUMBER", "918790733189")
 
+
 # -----------------------------------------------------------------------------
-# EMAIL CONFIGURATION (ENVIRONMENT-BASED SECRETS)
+# EMAIL CONFIGURATION (RESEND HTTPS API)
 # -----------------------------------------------------------------------------
 
 EMAIL_BACKEND = os.environ.get(
     "EMAIL_BACKEND",
-    "django.core.mail.backends.smtp.EmailBackend"
+    "contact.resend_backend.ResendEmailBackend",
 )
-EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")
-EMAIL_PORT = int(os.environ.get("EMAIL_PORT", 587))
-EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS", "True").lower() in ("true", "1", "t")
 
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "ssfarmswanaparthy@gmail.com")
+# Resend test sender. A verified custom domain will be needed for a
+# production-branded sender address.
+RESEND_FROM_EMAIL = os.environ.get(
+    "RESEND_FROM_EMAIL",
+    "SS Farms <onboarding@resend.dev>",
+)
+
+DEFAULT_FROM_EMAIL = RESEND_FROM_EMAIL
+
+# Keep these settings for any other code that may still use SMTP.
+EMAIL_HOST_USER = os.environ.get(
+    "EMAIL_HOST_USER",
+    "ssfarmswanaparthy@gmail.com",
+)
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
-DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", EMAIL_HOST_USER)
-EMAIL_TIMEOUT = int(os.environ.get("EMAIL_TIMEOUT", "5"))
-
-# -----------------------------------------------------------------------------
+EMAIL_TIMEOUT = int(os.environ.get("EMAIL_TIMEOUT", "5"))# -----------------------------------------------------------------------------
 # HTTPS, COOKIE & REVERSE PROXY SECURITY
 # -----------------------------------------------------------------------------
 
