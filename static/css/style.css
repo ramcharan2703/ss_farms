@@ -1,9 +1,6 @@
 /*==================================================
-                GOOGLE FONT
+                 GOOGLE FONT (Loaded via base.html preconnect)
 ==================================================*/
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
 
 /*==================================================
                     RESET
@@ -113,7 +110,7 @@ img {
 
     position: relative;
 
-    background: url("../images/hero-banner.jpg") center center/cover no-repeat;
+    background: url("../images/hero-rooster.jpg") center center/cover no-repeat;
 
     min-height: 100vh;
 
@@ -987,7 +984,7 @@ img {
 
     }
 
-    .btn {
+    .hero-section .btn {
 
         width: 100%;
 

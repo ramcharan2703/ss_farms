@@ -91,75 +91,72 @@ Contact SS Farms Wanaparthy for premium Bheemavaram Fighting Roosters, chicks, h
                         </h3>
 
                         
-                        <form method="POST">
+                        <form method="POST" novalidate>
 
                             {% csrf_token %}
+                            {{ form.website }}
+
+                            {% if form.non_field_errors %}
+                                <div class="alert alert-danger">
+                                    {% for error in form.non_field_errors %}
+                                        <p class="mb-0">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
 
                             <div class="mb-3">
-
-                                <label class="form-label">
-                                    Name
+                                <label for="contact_name" class="form-label">
+                                    Full Name <span class="text-danger">*</span>
                                 </label>
-
-                                <input
-                                    type="text"
-                                    name="name"
-                                    class="form-control"
-                                    placeholder="Enter your name"
-                                    required>
-
+                                {{ form.name }}
+                                {% if form.name.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ form.name.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
 
                             <div class="mb-3">
-
-                                <label class="form-label">
-                                    Email
+                                <label for="contact_email" class="form-label">
+                                    Email Address <span class="text-danger">*</span>
                                 </label>
-
-                                <input
-                                    type="email"
-                                    name="email"
-                                    class="form-control"
-                                    placeholder="Enter your email"
-                                    required>
-
+                                {{ form.email }}
+                                {% if form.email.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ form.email.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
 
                             <div class="mb-3">
-
-                                <label class="form-label">
-                                    Phone Number
+                                <label for="contact_phone" class="form-label">
+                                    Phone Number <span class="text-danger">*</span>
                                 </label>
-
-                                <input
-                                    type="text"
-                                    name="phone"
-                                    class="form-control"
-                                    placeholder="Enter your phone number"
-                                    required>
-
+                                {{ form.phone }}
+                                {% if form.phone.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ form.phone.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
 
                             <div class="mb-3">
-
-                                <label class="form-label">
-                                    Message
+                                <label for="contact_message" class="form-label">
+                                    Message <span class="text-danger">*</span>
                                 </label>
-
-                                <textarea
-                                    name="message"
-                                    class="form-control"
-                                    rows="5"
-                                    placeholder="Write your message here..."
-                                    required></textarea>
-
+                                {{ form.message }}
+                                {% if form.message.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ form.message.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
 
                             <button
                                 type="submit"
                                 class="btn btn-success w-100">
 
-                                <i class="bi bi-send-fill"></i>
+                                <i class="bi bi-send-fill" aria-hidden="true"></i>
 
                                 Send Message
 

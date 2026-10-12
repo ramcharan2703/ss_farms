@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Access Denied (403) | SS Farms Wanaparthy{% endblock %}
+{% block meta_description %}You do not have permission to access this resource on SS Farms Wanaparthy.{% endblock %}
+
+{% block content %}
+<section class="py-5 text-center bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm rounded-4 p-5">
+                    <span class="display-1 fw-bold text-warning">403</span>
+                    <h1 class="h3 fw-bold mt-3 mb-2">Access Forbidden</h1>
+                    <p class="text-muted mb-4">
+                        You do not have permission to view this page or your security token has expired.
+                    </p>
+                    <a href="{% url 'home' %}" class="btn btn-success rounded-pill px-4">
+                        Back to Safe Ground
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

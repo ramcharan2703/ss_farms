@@ -1,108 +1,154 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}Your Cart | SS Farms Wanaparthy{% endblock %}
+{% block meta_description %}Review your selected poultry items and complete your inquiry via WhatsApp with SS Farms Wanaparthy.{% endblock %}
 
 {% block content %}
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h2 fw-bold text-success mb-0">
+                <i class="bi bi-cart3 me-2" aria-hidden="true"></i>Your Cart
+            </h1>
+            {% if items %}
+                <form method="POST" action="{% url 'clear_cart' %}" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are you sure you want to clear your cart?');">
+                        <i class="bi bi-trash3 me-1" aria-hidden="true"></i>Clear Cart
+                    </button>
+                </form>
+            {% endif %}
+        </div>
 
-<div class="container py-5">
+        {% if items %}
+            <div class="row g-4">
+                <!-- Cart Items List -->
+                <div class="col-lg-8">
+                    {% for item in items %}
+                        <div class="card border-0 shadow-sm rounded-4 mb-3">
+                            <div class="card-body p-3 p-md-4">
+                                <div class="row align-items-center g-3">
+                                    <!-- Product Image -->
+                                    <div class="col-3 col-md-2">
+                                        {% if item.product.image %}
+                                            <img src="{{ item.product.image.url }}"
+                                                 class="img-fluid rounded-3"
+                                                 alt="{{ item.product.name }}"
+                                                 style="width: 100%; height: 80px; object-fit: cover;">
+                                        {% else %}
+                                            <div class="bg-secondary text-white d-flex align-items-center justify-content-center rounded-3" style="height: 80px;">
+                                                <i class="bi bi-image" aria-hidden="true"></i>
+                                            </div>
+                                        {% endif %}
+                                    </div>
 
-    <h2 class="mb-4">
-        🛒 Cart
-    </h2>
+                                    <!-- Product Details & Quantity Controls -->
+                                    <div class="col-9 col-md-6">
+                                        <h2 class="h5 mb-1">
+                                            <a href="{% url 'product_detail' item.product.id %}" class="text-dark text-decoration-none">
+                                                {{ item.product.name }}
+                                            </a>
+                                        </h2>
+                                        <p class="text-muted small mb-2">
+                                            Unit Price: ₹{{ item.product.price }}
+                                        </p>
 
-    {% if items %}
+                                        <!-- Quantity Controls via POST -->
+                                        <div class="d-flex align-items-center gap-2">
+                                            <form method="POST" action="{% url 'decrease_quantity' item.product.id %}" class="d-inline m-0">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-outline-secondary btn-sm px-2 py-1" aria-label="Decrease quantity for {{ item.product.name }}">
+                                                    <i class="bi bi-dash" aria-hidden="true"></i>
+                                                </button>
+                                            </form>
 
-        {% for item in items %}
+                                            <span class="fw-bold px-2 py-1 border rounded bg-white text-center" style="min-width: 40px;">
+                                                {{ item.quantity }}
+                                            </span>
 
-        <div class="card mb-3">
+                                            <form method="POST" action="{% url 'increase_quantity' item.product.id %}" class="d-inline m-0">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-outline-secondary btn-sm px-2 py-1" aria-label="Increase quantity for {{ item.product.name }}">
+                                                    <i class="bi bi-plus" aria-hidden="true"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
 
-            <div class="card-body">
+                                    <!-- Subtotal & Remove -->
+                                    <div class="col-12 col-md-4 text-md-end d-flex d-md-block justify-content-between align-items-center pt-2 pt-md-0 border-top border-md-0">
+                                        <div class="mb-md-2">
+                                            <span class="text-muted small d-block d-md-none">Subtotal:</span>
+                                            <span class="h5 fw-bold text-success mb-0">₹{{ item.subtotal|floatformat:2 }}</span>
+                                        </div>
+                                        <form method="POST" action="{% url 'remove_from_cart' item.product.id %}" class="d-inline">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-link text-danger p-0 text-decoration-none small" aria-label="Remove {{ item.product.name }} from cart">
+                                                <i class="bi bi-x-circle me-1" aria-hidden="true"></i>Remove
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
 
-                <div class="row align-items-center">
-
-                    <div class="col-md-2">
-
-                        <img src="{{ item.product.image.url }}"
-                             class="img-fluid rounded"
-                             alt="{{ item.product.name }}">
-
-                    </div>
-
-                    <div class="col-md-6">
-
-                        <h4>{{ item.product.name }}</h4>
-
-                        <p>₹{{ item.product.price }}</p>
-
-                        <div class="d-flex align-items-center gap-2 my-2">
-
-    <a href="{% url 'decrease_quantity' item.product.id %}"
-       class="btn btn-outline-danger btn-sm">
-        −
-    </a>
-
-    <span class="fw-bold">
-        {{ item.quantity }}
-    </span>
-
-    <a href="{% url 'increase_quantity' item.product.id %}"
-       class="btn btn-outline-success btn-sm">
-        +
-    </a>
-
-</div>
-
-                    </div>
-
-                    <div class="col-md-4 text-end">
-
-                        <a href="{% url 'remove_from_cart' item.product.id %}"
-                           class="btn btn-danger">
-
-                            Remove
-
+                    <div class="mt-3">
+                        <a href="{% url 'products' %}" class="text-success text-decoration-none fw-semibold">
+                            <i class="bi bi-arrow-left me-1" aria-hidden="true"></i>Continue Browsing Products
                         </a>
-
                     </div>
-
                 </div>
 
+                <!-- Order Summary & WhatsApp Checkout -->
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm rounded-4 sticky-top" style="top: 100px;">
+                        <div class="card-body p-4">
+                            <h3 class="h5 fw-bold mb-3 border-bottom pb-2">Order Summary</h3>
+
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Total Items</span>
+                                <span class="fw-semibold">{{ cart_count }}</span>
+                            </div>
+
+                            <div class="d-flex justify-content-between mb-3 border-bottom pb-3">
+                                <span class="h6 mb-0">Estimated Total</span>
+                                <span class="h5 fw-bold text-success mb-0">₹{{ total|floatformat:2 }}</span>
+                            </div>
+
+                            <div class="alert alert-info py-2 px-3 small rounded-3 mb-3">
+                                <i class="bi bi-info-circle me-1" aria-hidden="true"></i>
+                                Live bird delivery charges and final availability are confirmed directly on WhatsApp.
+                            </div>
+
+                            <div class="d-grid gap-2">
+                                <a href="{{ whatsapp_link }}"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   class="btn btn-success btn-lg rounded-pill fw-bold py-3 shadow-sm">
+                                    <i class="bi bi-whatsapp me-2" aria-hidden="true"></i>Send Cart on WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-        </div>
-
-        {% endfor %}
-        <div class="text-end mt-4">
-
-    <a href="{{ whatsapp_link }}"
-       target="_blank"
-       class="btn btn-success btn-lg">
-
-        <i class="bi bi-whatsapp"></i>
-
-        Send Cart on WhatsApp
-
-    </a>
-
-</div>
-<div class="text-end mt-3">
-    <a href="{% url 'clear_cart' %}" class="btn btn-danger">
-        🗑 Clear Cart
-    </a>
-</div>
-
-    {% else %}
-
-        <div class="text-center">
-
-            <h4>Your  Cart is Empty.</h4>
-
-            <a href="{% url 'products' %}" class="btn btn-success mt-3">
-                Browse Products
-            </a>
-
-        </div>
-
-    {% endif %}
-
-</div>
-
+        {% else %}
+            <!-- Empty Cart State -->
+            <div class="card border-0 shadow-sm rounded-4 text-center py-5">
+                <div class="card-body py-5">
+                    <div class="display-1 text-muted mb-3">
+                        <i class="bi bi-cart-x" aria-hidden="true"></i>
+                    </div>
+                    <h2 class="h3 fw-bold mb-2">Your Cart is Currently Empty</h2>
+                    <p class="text-muted mb-4">Explore our original fighting breed roosters, chicks, and hatching eggs.</p>
+                    <a href="{% url 'products' %}" class="btn btn-success btn-lg rounded-pill px-5">
+                        Browse Products
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</section>
 {% endblock %}

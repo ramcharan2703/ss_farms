@@ -1,177 +1,165 @@
 {% extends 'base.html' %}
-{% block title %}
-Products | SS Farms Wanaparthy
-{% endblock %}
-
-{% block meta_description %}
-Browse premium Bheemavaram Fighting Roosters, chicks, hatching eggs, poultry feed, medicines and accessories from SS Farms Wanaparthy.
-{% endblock %}
 {% load static %}
 
+{% block title %}Our Products | SS Farms Wanaparthy{% endblock %}
+{% block meta_description %}Browse premium Bheemavaram Fighting Roosters, chicks, hatching eggs, poultry feed, medicines and accessories from SS Farms Wanaparthy.{% endblock %}
+
 {% block content %}
-
 <section class="py-5 bg-light">
-
     <div class="container">
-
         <!-- Heading -->
-
         <div class="text-center mb-5">
-
-            <h1 class="fw-bold">Our Products</h1>
-
+            <h1 class="fw-bold text-success">Our Products</h1>
             <p class="text-muted">
-                Browse our premium poultry products.
+                Original fighting breed roosters, pure bloodline chicks, hatching eggs, and farm essentials.
             </p>
-
         </div>
 
-        <!-- Search -->
-
+        <!-- Search Bar -->
         <form method="GET" class="mb-4">
-
-            <div class="input-group">
-
+            {% if selected_category %}
+                <input type="hidden" name="category" value="{{ selected_category }}">
+            {% endif %}
+            <div class="input-group shadow-sm rounded-pill overflow-hidden bg-white">
                 <input
                     type="text"
                     name="q"
-                    class="form-control"
-                    placeholder="Search products..."
-                    value="{{ query|default:'' }}">
-
-                <button class="btn btn-success">
-                    <i class="bi bi-search"></i> Search
+                    class="form-control border-0 px-4 py-3"
+                    placeholder="Search products by name..."
+                    value="{{ query|default:'' }}"
+                    aria-label="Search products">
+                <button class="btn btn-success px-4" type="submit" aria-label="Submit search">
+                    <i class="bi bi-search me-1" aria-hidden="true"></i> Search
                 </button>
-
             </div>
-
         </form>
 
         <!-- Category Filter -->
-
-        <div class="mb-5">
-
-            <a href="{% url 'products' %}"
-               class="btn {% if not selected_category %}btn-success{% else %}btn-outline-success{% endif %} me-2 mb-2">
-
-                All
-
+        <div class="mb-5 d-flex gap-2 flex-wrap">
+            <a href="{% url 'products' %}{% if query %}?q={{ query }}{% endif %}"
+               class="btn {% if not selected_category %}btn-success{% else %}btn-outline-success{% endif %} rounded-pill px-4">
+                All Products
             </a>
 
             {% for category in categories %}
-
-                <a href="?category={{ category.id }}"
-                   class="btn {% if selected_category == category.id|stringformat:'s' %}btn-success{% else %}btn-outline-success{% endif %} me-2 mb-2">
-
+                <a href="?category={{ category.id }}{% if query %}&q={{ query }}{% endif %}"
+                   class="btn {% if selected_category == category.id|stringformat:'s' %}btn-success{% else %}btn-outline-success{% endif %} rounded-pill px-3">
                     {{ category.icon }} {{ category.name }}
-
                 </a>
-
             {% endfor %}
-
         </div>
 
-        <!-- Products -->
-
+        <!-- Products Grid -->
         <div class="row g-4">
-
             {% for product in products %}
-
-            <div class="col-lg-4 col-md-6">
-
-                <div class="card h-100 shadow border-0 rounded-4">
-
-                    <a href="{% url 'product_detail' product.id %}">
-
-                        <img src="{{ product.image.url }}"
-                             class="card-img-top"
-                             alt="{{ product.name }}"
-                             style="height:260px; object-fit:cover;">
-
-                    </a>
-
-                    <div class="card-body">
-
-                        <span class="badge bg-success mb-2">
-
-                            {{ product.status }}
-
-                        </span>
-
-                        <h4 class="mt-2">
-
-                            <a href="{% url 'product_detail' product.id %}"
-                               class="text-dark text-decoration-none">
-
-                                {{ product.name }}
-
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
+                        <div class="position-relative">
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img src="{{ product.image.url }}"
+                                     class="card-img-top"
+                                     alt="{{ product.name }}"
+                                     style="height: 260px; object-fit: cover;"
+                                     loading="lazy">
                             </a>
-
-                        </h4>
-
-                        <p class="text-muted">
-
-                            {{ product.description|truncatewords:15 }}
-
-                        </p>
-
-                        <h4 class="text-success fw-bold">
-
-                            ₹{{ product.price }}
-
-                        </h4>
-
-                    </div>
-
-                    <div class="card-footer bg-white border-0">
-
-                        <div class="d-grid gap-2">
-
-                            <a href="{% url 'product_detail' product.id %}"
-                               class="btn btn-outline-success">
-
-                                View Details
-
-                            </a>
-
-                            <a href="https://wa.me/{{ product.whatsapp_number }}?text=Hello%20SS%20Farms,%0A%0AI%20am%20interested%20in%20{{ product.name }}.%0APrice:%20₹{{ product.price }}.%0APlease%20let%20me%20know%20if%20it%20is%20available."
-                               target="_blank"
-                               class="btn btn-success">
-
-                                <i class="bi bi-whatsapp"></i>
-
-                                Order on WhatsApp
-
-                            </a>
-
+                            <span class="badge {% if product.status == 'In Stock' %}bg-success{% elif product.status == 'Pre Order' %}bg-warning text-dark{% else %}bg-secondary{% endif %} position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">
+                                {{ product.status }}
+                            </span>
                         </div>
 
+                        <div class="card-body p-4 d-flex flex-column">
+                            <span class="text-muted small text-uppercase fw-semibold mb-1">
+                                {{ product.category.name }}
+                            </span>
+                            <h2 class="h5 fw-bold mb-2">
+                                <a href="{% url 'product_detail' product.id %}" class="text-dark text-decoration-none">
+                                    {{ product.name }}
+                                </a>
+                            </h2>
+                            <p class="text-muted small flex-grow-1">
+                                {{ product.description|striptags|truncatewords:15 }}
+                            </p>
+                            <div class="d-flex justify-content-between align-items-baseline mt-2">
+                                <span class="h4 text-success fw-bold mb-0">₹{{ product.price }}</span>
+                                {% if product.stock > 0 and product.status == 'In Stock' %}
+                                    <span class="badge bg-light text-success border border-success small">{{ product.stock }} in stock</span>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="card-footer bg-white border-0 p-4 pt-0">
+                            <div class="d-grid gap-2">
+                                {% if product.status != "Out of Stock" %}
+                                    <form method="POST" action="{% url 'add_to_cart' product.id %}" class="d-grid">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-warning fw-semibold">
+                                            <i class="bi bi-cart-plus me-1" aria-hidden="true"></i> Add to Cart
+                                        </button>
+                                    </form>
+                                {% endif %}
+                                <div class="d-flex gap-2">
+                                    <a href="{% url 'product_detail' product.id %}"
+                                       class="btn btn-outline-success flex-grow-1">
+                                        Details
+                                    </a>
+                                    <a href="https://wa.me/{{ product.whatsapp_number }}?text=Hello%20SS%20Farms,%20I%20am%20interested%20in%20{{ product.name|urlencode }}%20(₹{{ product.price }}).%20Please%20let%20me%20know%20if%20it%20is%20available."
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       class="btn btn-success flex-grow-1"
+                                       aria-label="Order {{ product.name }} on WhatsApp">
+                                        <i class="bi bi-whatsapp me-1" aria-hidden="true"></i> WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
-
-            </div>
-
             {% empty %}
-
-            <div class="col-12 text-center">
-
-                <h3>No Products Found</h3>
-
-                <p class="text-muted">
-
-                    Try another search or category.
-
-                </p>
-
-            </div>
-
+                <div class="col-12 text-center py-5">
+                    <div class="py-5">
+                        <i class="bi bi-search display-3 text-muted mb-3" aria-hidden="true"></i>
+                        <h2 class="h3 fw-bold">No Products Found</h2>
+                        <p class="text-muted">Try adjusting your search query or selected category filter.</p>
+                        <a href="{% url 'products' %}" class="btn btn-success rounded-pill px-4 mt-2">
+                            View All Products
+                        </a>
+                    </div>
+                </div>
             {% endfor %}
-
         </div>
 
+        <!-- Pagination -->
+        {% if page_obj.has_other_pages %}
+            <nav aria-label="Products pagination" class="mt-5">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">Previous</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled"><span class="page-link">Previous</span></li>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                            <li class="page-item">
+                                <a class="page-link" href="?page={{ num }}{% if query %}&q={{ query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">{{ num }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">Next</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item disabled"><span class="page-link">Next</span></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% endif %}
     </div>
-
 </section>
-
 {% endblock %}

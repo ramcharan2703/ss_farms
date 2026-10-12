@@ -1,10 +1,2 @@
-from django.shortcuts import render
-from gallery.models import Gallery
-
-def home(request):
-    gallery = Gallery.objects.all().order_by("-uploaded_at")
-
-    return render(request, "home.html", {
-        "gallery": gallery,
-    })
-# Create your views here.
+# gallery/views.py
+# Gallery images are displayed as an aggregated component on the home page view.

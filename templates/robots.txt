@@ -1,4 +1,6 @@
 User-agent: *
-Disallow:
+Disallow: /admin/
+Disallow: /inquiry/
+Disallow: /preorders/success/
 
 Sitemap: https://ss-farms.onrender.com/sitemap.xml

@@ -1,120 +1,128 @@
 {% extends 'base.html' %}
 
+{% block title %}Pre-Order Roosters & Hatching Eggs | SS Farms Wanaparthy{% endblock %}
+{% block meta_description %}Book your original Bheemavaram roosters, chicks, and hatching eggs in advance from SS Farms Wanaparthy for the upcoming batch.{% endblock %}
+
 {% block content %}
-
-<section class="py-5">
-
+<section class="py-5 bg-light">
     <div class="container">
-
         <div class="row justify-content-center">
-
             <div class="col-lg-8">
-
-                <div class="card shadow border-0 rounded-4">
-
-                    <div class="card-header bg-success text-white text-center py-3">
-
-                        <h2 class="mb-0">
-                            Pre-Order Form
-                        </h2>
-
+                <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+                    <div class="card-header bg-success text-white text-center py-4">
+                        <h1 class="h3 mb-1 fw-bold">
+                            <i class="bi bi-calendar-check me-2" aria-hidden="true"></i>Pre-Order Form
+                        </h1>
+                        <p class="mb-0 text-white-50 small">
+                            Reserve upcoming breeding batches of pureblood fighting roosters, chicks, and fertile hatching eggs.
+                        </p>
                     </div>
 
-                    <div class="card-body p-4">
-
-                        <form method="POST">
-
+                    <div class="card-body p-4 p-md-5 bg-white">
+                        <form method="POST" novalidate>
                             {% csrf_token %}
 
+                            {% if form.non_field_errors %}
+                                <div class="alert alert-danger">
+                                    {% for error in form.non_field_errors %}
+                                        <p class="mb-0">{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
                             <div class="mb-3">
-
-                                <label class="form-label">
-                                    Customer Name
+                                <label for="preorder_name" class="form-label fw-semibold">
+                                    Customer Name <span class="text-danger">*</span>
                                 </label>
-
                                 {{ form.customer_name }}
-
+                                {% if form.customer_name.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ form.customer_name.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
 
                             <div class="mb-3">
-
-                                <label class="form-label">
-                                    Phone Number
+                                <label for="preorder_phone" class="form-label fw-semibold">
+                                    WhatsApp Phone Number <span class="text-danger">*</span>
                                 </label>
-
                                 {{ form.phone_number }}
-
+                                {% if form.phone_number.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ form.phone_number.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
 
                             <div class="mb-3">
-
-                                <label class="form-label">
-                                    Product
+                                <label for="preorder_product" class="form-label fw-semibold">
+                                    Product to Pre-Order <span class="text-danger">*</span>
                                 </label>
-
                                 {{ form.product }}
-
+                                {% if form.product.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ form.product.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
 
                             <div class="mb-3">
-
-                                <label class="form-label">
-                                    Quantity
+                                <label for="preorder_quantity" class="form-label fw-semibold">
+                                    Quantity <span class="text-danger">*</span>
                                 </label>
-
                                 {{ form.quantity }}
-
+                                {% if form.quantity.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ form.quantity.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
 
                             <div class="mb-3">
-
-                                <label class="form-label">
-                                    Preferred Delivery Date
+                                <label for="preorder_date" class="form-label fw-semibold">
+                                    Preferred Delivery / Ready Date <span class="text-danger">*</span>
                                 </label>
-
                                 {{ form.preferred_date }}
-
+                                <div class="form-text">Choose the date when you would like the birds/eggs to be ready.</div>
+                                {% if form.preferred_date.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ form.preferred_date.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
 
                             <div class="mb-3">
-
-                                <label class="form-label">
-                                    Address
+                                <label for="preorder_address" class="form-label fw-semibold">
+                                    Delivery Address / Location <span class="text-danger">*</span>
                                 </label>
-
                                 {{ form.address }}
-
+                                {% if form.address.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ form.address.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
 
-                            <div class="mb-3">
-
-                                <label class="form-label">
-                                    Additional Notes
+                            <div class="mb-4">
+                                <label for="preorder_notes" class="form-label fw-semibold">
+                                    Additional Notes (Optional)
                                 </label>
-
                                 {{ form.notes }}
-
+                                {% if form.notes.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ form.notes.errors.0 }}
+                                    </div>
+                                {% endif %}
                             </div>
 
-                            <button type="submit"
-                                    class="btn btn-success w-100">
-
-                                Submit Pre-Order
-
+                            <button type="submit" class="btn btn-success btn-lg w-100 py-3 rounded-pill fw-bold shadow-sm">
+                                <i class="bi bi-send-check me-2" aria-hidden="true"></i>Submit Pre-Order
                             </button>
-
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
-
 {% endblock %}

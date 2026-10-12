@@ -353,7 +353,9 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
                             </a>
 
-                            <a href="https://wa.me/{{ product.whatsapp_number }}?text=Hi, I'm interested in {{ product.name }}"
+                            <a href="https://wa.me/{{ product.whatsapp_number }}?text=Hi,%20I%20am%20interested%20in%20{{ product.name|urlencode }}"
+                               target="_blank"
+                               rel="noopener noreferrer"
                                class="btn btn-success">
 
                                 <i class="bi bi-whatsapp"

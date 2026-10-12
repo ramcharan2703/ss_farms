@@ -5,10 +5,10 @@ from testimonials.models import Testimonial
 
 
 def home(request):
-
     categories = Category.objects.all()
 
-    products = Product.objects.all()[:6]
+    # Preload category to avoid N+1 queries when accessing product.category
+    products = Product.objects.select_related("category").all()[:6]
 
     gallery = Gallery.objects.all().order_by("-uploaded_at")
 
@@ -17,13 +17,8 @@ def home(request):
     ).order_by("-created_at")
 
     return render(request, "home.html", {
-
         "categories": categories,
-
         "products": products,
-
         "gallery": gallery,
-
         "testimonials": testimonials,
-
     })
