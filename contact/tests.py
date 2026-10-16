@@ -8,6 +8,10 @@ class ContactFormTests(TestCase):
         response = self.client.get(reverse("contact"))
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, "Send Us a Message")
+        self.assertContains(response, 'href="tel:+918790733189"')
+        self.assertContains(response, 'href="mailto:ssfarmswanaparthy@gmail.com"')
+        self.assertContains(response, 'href="https://wa.me/918790733189"')
+
 
     def test_valid_contact_submission_persisted_in_db(self):
         data = {

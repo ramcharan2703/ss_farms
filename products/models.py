@@ -1,4 +1,8 @@
+import urllib.parse
+from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.db import models
+from .validators import validate_indian_whatsapp_number, normalize_indian_whatsapp_number
 
 
 class Category(models.Model):
@@ -63,3 +67,31 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def clean(self):
+        super().clean()
+        if self.whatsapp_number:
+            normalized = normalize_indian_whatsapp_number(self.whatsapp_number)
+            if not normalized:
+                raise ValidationError({
+                    "whatsapp_number": "Enter a valid 10-digit Indian mobile number (e.g. 8790733189 or 918790733189)."
+                })
+            self.whatsapp_number = normalized
+
+    def save(self, *args, **kwargs):
+        if self.whatsapp_number:
+            normalized = normalize_indian_whatsapp_number(self.whatsapp_number)
+            if normalized:
+                self.whatsapp_number = normalized
+        super().save(*args, **kwargs)
+
+    @property
+    def normalized_whatsapp_number(self):
+        """
+        Returns normalized digits-only international format (91XXXXXXXXXX)
+        for wa.me links, safely falling back to farm WhatsApp if corrupted.
+        """
+        normalized = normalize_indian_whatsapp_number(self.whatsapp_number)
+        if normalized:
+            return normalized
+        return getattr(settings, "WHATSAPP_NUMBER", "918790733189")

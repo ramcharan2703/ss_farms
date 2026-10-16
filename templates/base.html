@@ -116,6 +116,7 @@
         ],
 
         "sameAs": [
+            "https://www.facebook.com/profile.php?id=61586339823753",
             "https://www.instagram.com/ss_farms_wanaparthy/",
             "https://www.youtube.com/@Ssfarmswanaparthy"
         ]
@@ -189,8 +190,9 @@
 
                     <li class="nav-item">
 
-                        <a class="nav-link active"
-                           href="/">
+                        <a class="nav-link{% if request.resolver_match.url_name == 'home' %} active{% endif %}"
+                           href="/"
+                           {% if request.resolver_match.url_name == 'home' %}aria-current="page"{% endif %}>
 
                             Home
 
@@ -203,8 +205,9 @@
 
                     <li class="nav-item">
 
-                        <a class="nav-link"
-                           href="{% url 'products' %}">
+                        <a class="nav-link{% if request.resolver_match.url_name == 'products' or request.resolver_match.url_name == 'product_detail' %} active{% endif %}"
+                           href="{% url 'products' %}"
+                           {% if request.resolver_match.url_name == 'products' or request.resolver_match.url_name == 'product_detail' %}aria-current="page"{% endif %}>
 
                             Products
 
@@ -231,8 +234,9 @@
 
                     <li class="nav-item">
 
-                        <a class="nav-link"
-                           href="{% url 'contact' %}">
+                        <a class="nav-link{% if request.resolver_match.url_name == 'contact' %} active{% endif %}"
+                           href="{% url 'contact' %}"
+                           {% if request.resolver_match.url_name == 'contact' %}aria-current="page"{% endif %}>
 
                             Contact
 
@@ -245,8 +249,9 @@
 
                     <li class="nav-item">
 
-                        <a class="nav-link position-relative"
-                           href="{% url 'cart' %}">
+                        <a class="nav-link position-relative{% if request.resolver_match.url_name == 'cart' or request.resolver_match.app_name == 'inquiry' %} active{% endif %}"
+                           href="{% url 'cart' %}"
+                           {% if request.resolver_match.url_name == 'cart' %}aria-current="page"{% endif %}>
 
                             <i class="bi bi-cart3"
                                aria-hidden="true"></i>
@@ -273,7 +278,8 @@
                     <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
 
                         <a href="{% url 'preorder' %}"
-                           class="btn btn-success rounded-pill px-4">
+                           class="btn btn-success rounded-pill px-4{% if request.resolver_match.url_name == 'preorder' or request.resolver_match.url_name == 'preorder_success' %} active shadow{% endif %}"
+                           {% if request.resolver_match.url_name == 'preorder' or request.resolver_match.url_name == 'preorder_success' %}aria-current="page"{% endif %}>
 
                             Pre-Order
 
@@ -302,7 +308,7 @@
 
             {% for message in messages %}
 
-                <div class="alert alert-success alert-dismissible fade show">
+                <div class="alert {% if 'error' in message.tags or 'danger' in message.tags %}alert-danger{% elif 'warning' in message.tags %}alert-warning{% elif 'success' in message.tags %}alert-success{% elif 'info' in message.tags %}alert-info{% elif 'debug' in message.tags %}alert-secondary{% else %}alert-info{% endif %} alert-dismissible fade show" role="alert">
 
                     {{ message }}
 
@@ -369,7 +375,9 @@
                     <i class="bi bi-telephone-fill"
                        aria-hidden="true"></i>
 
-                    +91 8790733189
+                    <a href="tel:+918790733189">
+                        +91 8790733189
+                    </a>
 
                 </p>
 
@@ -378,7 +386,9 @@
                     <i class="bi bi-envelope-fill"
                        aria-hidden="true"></i>
 
-                    ssfarmswanaparthy@gmail.com
+                    <a href="mailto:ssfarmswanaparthy@gmail.com">
+                        ssfarmswanaparthy@gmail.com
+                    </a>
 
                 </p>
 
@@ -435,26 +445,34 @@
             <!-- Categories -->
 
             <div class="col-lg-3">
-<h4 class="text-white">
-    Categories
-</h4>
+
+                <h4 class="text-white">
+                    Categories
+                </h4>
+
                 <ul class="list-unstyled">
 
-                    <li>
-                        Roosters
-                    </li>
+                    {% for cat in footer_categories %}
 
-                    <li>
-                        Chicks
-                    </li>
+                        <li>
 
-                    <li>
-                        Hatching Eggs
-                    </li>
+                            <a href="{% url 'products' %}?category={{ cat.id }}">
+                                {{ cat.name }}
+                            </a>
 
-                    <li>
-                        Feed
-                    </li>
+                        </li>
+
+                    {% empty %}
+
+                        <li>
+
+                            <a href="{% url 'products' %}">
+                                All Products
+                            </a>
+
+                        </li>
+
+                    {% endfor %}
 
                 </ul>
 
@@ -473,9 +491,11 @@
 
                     <!-- Facebook -->
 
-                    <a href="#"
+                    <a href="https://www.facebook.com/profile.php?id=61586339823753"
+                       target="_blank"
+                       rel="noopener noreferrer"
                        class="social-icon"
-                       aria-label="Facebook">
+                       aria-label="SS Farms on Facebook">
 
                         <i class="bi bi-facebook"
                            aria-hidden="true"></i>
@@ -513,9 +533,11 @@
 
                     <!-- WhatsApp -->
 
-                    <a href="#"
+                    <a href="https://wa.me/918790733189"
+                       target="_blank"
+                       rel="noopener noreferrer"
                        class="social-icon"
-                       aria-label="WhatsApp">
+                       aria-label="Chat with SS Farms on WhatsApp">
 
                         <i class="bi bi-whatsapp"
                            aria-hidden="true"></i>

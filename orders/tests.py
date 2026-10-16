@@ -58,6 +58,9 @@ class PreOrderTests(TestCase):
         response = self.client.post(reverse("preorder"), data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(PreOrder.objects.count(), 0)
+        self.assertContains(response, "alert-danger")
+        self.assertNotContains(response, "alert-success")
+
 
     def test_preorder_success_contains_correct_whatsapp_number(self):
         response = self.client.get(reverse("preorder_success"))

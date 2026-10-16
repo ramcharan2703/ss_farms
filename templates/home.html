@@ -259,13 +259,9 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
                         </div>
 
-                        <h3 class="h4">
+                        <h3 class="h4 mb-0">
                             {{ category.name }}
                         </h3>
-
-                        <p>
-                            {{ category.description }}
-                        </p>
 
                     </div>
 
@@ -353,7 +349,7 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
                             </a>
 
-                            <a href="https://wa.me/{{ product.whatsapp_number }}?text=Hi,%20I%20am%20interested%20in%20{{ product.name|urlencode }}"
+                            <a href="https://wa.me/{{ product.normalized_whatsapp_number }}?text=Hi,%20I%20am%20interested%20in%20{{ product.name|urlencode }}"
                                target="_blank"
                                rel="noopener noreferrer"
                                class="btn btn-success">
@@ -690,7 +686,9 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
                         <i class="bi bi-telephone-fill text-success me-2"
                            aria-hidden="true"></i>
 
-                        +91 8790733189
+                        <a href="tel:+918790733189" class="text-decoration-none text-dark">
+                            +91 8790733189
+                        </a>
 
                     </p>
 
@@ -699,7 +697,9 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
                         <i class="bi bi-envelope-fill text-success me-2"
                            aria-hidden="true"></i>
 
-                        ssfarmswanaparthy@gmail.com
+                        <a href="mailto:ssfarmswanaparthy@gmail.com" class="text-decoration-none text-dark">
+                            ssfarmswanaparthy@gmail.com
+                        </a>
 
                     </p>
 

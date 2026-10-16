@@ -73,14 +73,14 @@
                         {% if product.status != "Out of Stock" %}
                             <form method="POST" action="{% url 'add_to_cart' product.id %}" class="mb-3">
                                 {% csrf_token %}
-                                <div class="row g-3 align-items-center mb-3">
+                                <div class="row g-2 g-sm-3 align-items-center mb-3">
                                     <div class="col-auto">
                                         <label for="product_qty" class="col-form-label fw-semibold">Quantity:</label>
                                     </div>
                                     <div class="col-auto">
-                                        <input type="number" id="product_qty" name="quantity" class="form-control text-center" value="1" min="1" max="50" style="width: 80px;">
+                                        <input type="number" id="product_qty" name="quantity" class="form-control text-center" value="1" min="1" max="50" style="width: 75px;">
                                     </div>
-                                    <div class="col">
+                                    <div class="col-12 col-sm">
                                         <button type="submit" class="btn btn-warning w-100 py-2 fw-semibold">
                                             <i class="bi bi-cart-plus me-1" aria-hidden="true"></i>Add to Cart
                                         </button>
@@ -97,7 +97,7 @@
                             </a>
                         {% endif %}
 
-                        <a href="https://wa.me/{{ product.whatsapp_number }}?text=Hello%20SS%20Farms,%20I%20am%20interested%20in%20{{ product.name|urlencode }}%20(₹{{ product.price }}).%20Please%20share%20availability%20details."
+                        <a href="https://wa.me/{{ product.normalized_whatsapp_number }}?text=Hello%20SS%20Farms,%20I%20am%20interested%20in%20{{ product.name|urlencode }}%20(₹{{ product.price }}).%20Please%20share%20availability%20details."
                            target="_blank"
                            rel="noopener noreferrer"
                            class="btn btn-success btn-lg w-100 py-3 rounded-pill fw-bold shadow-sm">

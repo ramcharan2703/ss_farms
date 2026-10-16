@@ -13,5 +13,5 @@ requests==2.34.2
 sqlparse==0.5.5
 asgiref==3.11.1
 
-resend
+resend==2.49.1
 
