@@ -5,46 +5,56 @@
 {% block meta_description %}Browse premium Bheemavaram Fighting Roosters, chicks, hatching eggs, poultry feed, medicines and accessories from SS Farms Wanaparthy.{% endblock %}
 
 {% block content %}
-<section class="py-5 bg-light">
+<section class="py-5" style="background: var(--cream-bg);">
     <div class="container">
         <!-- Heading -->
-        <div class="text-center mb-5">
-            <h1 class="fw-bold text-success">Our Products</h1>
-            <p class="text-muted">
-                Original fighting breed roosters, pure bloodline chicks, hatching eggs, and farm essentials.
+        <div class="text-center mb-5 section-header">
+            <span class="badge px-3 py-2 rounded-pill mb-2 bg-success-subtle text-success fw-semibold">
+                Direct from Wanaparthy Farm
+            </span>
+            <h1 class="display-6 fw-bold text-dark section-title">Our Poultry & Farm Catalog</h1>
+            <p class="text-muted section-subtitle mx-auto" style="max-width: 650px;">
+                Original fighting breed roosters, pure bloodline chicks, hatching eggs, and farm essentials raised with natural care.
             </p>
         </div>
 
         <!-- Search Bar -->
-        <form method="GET" class="mb-4">
-            {% if selected_category %}
-                <input type="hidden" name="category" value="{{ selected_category }}">
-            {% endif %}
-            <div class="input-group shadow-sm rounded-pill overflow-hidden bg-white">
-                <input
-                    type="text"
-                    name="q"
-                    class="form-control border-0 px-4 py-3"
-                    placeholder="Search products by name..."
-                    value="{{ query|default:'' }}"
-                    aria-label="Search products">
-                <button class="btn btn-success px-4" type="submit" aria-label="Submit search">
-                    <i class="bi bi-search me-1" aria-hidden="true"></i> Search
-                </button>
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8">
+                <form method="GET" class="catalog-search-form">
+                    {% if selected_category %}
+                        <input type="hidden" name="category" value="{{ selected_category }}">
+                    {% endif %}
+                    <div class="input-group shadow-sm rounded-pill overflow-hidden bg-white border border-light-subtle p-1">
+                        <span class="input-group-text bg-transparent border-0 ps-3 text-muted">
+                            <i class="bi bi-search" aria-hidden="true"></i>
+                        </span>
+                        <input
+                            type="text"
+                            name="q"
+                            class="form-control border-0 px-2 py-3 shadow-none bg-transparent"
+                            placeholder="Search birds, eggs, feed, or supplies..."
+                            value="{{ query|default:'' }}"
+                            aria-label="Search products">
+                        <button class="btn btn-success rounded-pill px-4" type="submit" aria-label="Submit search">
+                            Search
+                        </button>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
 
-        <!-- Category Filter -->
-        <div class="mb-5 d-flex gap-2 flex-wrap">
+        <!-- Category Filter Pills -->
+        <div class="mb-5 d-flex gap-2 flex-wrap justify-content-center category-filter-group">
             <a href="{% url 'products' %}{% if query %}?q={{ query }}{% endif %}"
-               class="btn {% if not selected_category %}btn-success{% else %}btn-outline-success{% endif %} rounded-pill px-4">
+               class="btn {% if not selected_category %}btn-success shadow-sm{% else %}btn-outline-forest{% endif %} rounded-pill px-4">
                 All Products
             </a>
 
             {% for category in categories %}
                 <a href="?category={{ category.id }}{% if query %}&q={{ query }}{% endif %}"
-                   class="btn {% if selected_category == category.id|stringformat:'s' %}btn-success{% else %}btn-outline-success{% endif %} rounded-pill px-3">
-                    {{ category.icon }} {{ category.name }}
+                   class="btn {% if selected_category == category.id|stringformat:'s' %}btn-success shadow-sm{% else %}btn-outline-forest{% endif %} rounded-pill px-3">
+                    {{ category.name }}
                 </a>
             {% endfor %}
         </div>
@@ -53,46 +63,54 @@
         <div class="row g-4">
             {% for product in products %}
                 <div class="col-lg-4 col-md-6">
-                    <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
-                        <div class="position-relative">
-                            <a href="{% url 'product_detail' product.id %}">
+                    <div class="card h-100 product-card border-0 rounded-4 overflow-hidden">
+                        <!-- Image Showcase -->
+                        <div class="product-image-wrapper position-relative overflow-hidden">
+                            <a href="{% url 'product_detail' product.id %}" class="d-block overflow-hidden">
                                 <img src="{{ product.image.url }}"
-                                     class="card-img-top"
+                                     class="product-image w-100"
                                      alt="{{ product.name }}"
-                                     style="height: 260px; object-fit: cover;"
-                                     loading="lazy">
+                                     loading="lazy"
+                                     decoding="async">
                             </a>
-                            <span class="badge {% if product.status == 'In Stock' %}bg-success{% elif product.status == 'Pre Order' %}bg-warning text-dark{% else %}bg-secondary{% endif %} position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill">
-                                {{ product.status }}
-                            </span>
+                            <div class="product-badge-float position-absolute top-0 start-0 m-3">
+                                <span class="badge {% if product.status == 'In Stock' %}badge-in-stock{% elif product.status == 'Pre Order' %}badge-preorder{% else %}badge-out-of-stock{% endif %} px-3 py-2 rounded-pill shadow-sm">
+                                    <span class="badge-dot"></span>
+                                    {{ product.status }}
+                                </span>
+                            </div>
                         </div>
 
+                        <!-- Card Body -->
                         <div class="card-body p-4 d-flex flex-column">
                             <span class="text-muted small text-uppercase fw-semibold mb-1">
                                 {{ product.category.name }}
                             </span>
                             <h2 class="h5 fw-bold mb-2">
-                                <a href="{% url 'product_detail' product.id %}" class="text-dark text-decoration-none">
+                                <a href="{% url 'product_detail' product.id %}" class="text-dark text-decoration-none product-title-link">
                                     {{ product.name }}
                                 </a>
                             </h2>
-                            <p class="text-muted small flex-grow-1">
+                            <p class="text-muted small flex-grow-1 mb-3">
                                 {{ product.description|striptags|truncatewords:15 }}
                             </p>
-                            <div class="d-flex justify-content-between align-items-baseline mt-2">
+                            <div class="d-flex justify-content-between align-items-baseline pt-2 border-top border-light-subtle">
                                 <span class="h4 text-success fw-bold mb-0">₹{{ product.price }}</span>
                                 {% if product.stock > 0 and product.status == 'In Stock' %}
-                                    <span class="badge bg-light text-success border border-success small">{{ product.stock }} in stock</span>
+                                    <span class="badge bg-success-subtle text-success small px-2 py-1 rounded-pill">
+                                        {{ product.stock }} in stock
+                                    </span>
                                 {% endif %}
                             </div>
                         </div>
 
+                        <!-- Card Footer Actions -->
                         <div class="card-footer bg-white border-0 p-4 pt-0">
                             <div class="d-grid gap-2">
                                 {% if product.status != "Out of Stock" %}
                                     <form method="POST" action="{% url 'add_to_cart' product.id %}" class="d-grid">
                                         {% csrf_token %}
-                                        <button type="submit" class="btn btn-warning fw-semibold">
+                                        <button type="submit" class="btn btn-warning fw-semibold shadow-sm">
                                             <i class="bi bi-cart-plus me-1" aria-hidden="true"></i> Add to Cart
                                         </button>
                                     </form>
@@ -105,7 +123,7 @@
                                     <a href="https://wa.me/{{ product.normalized_whatsapp_number }}?text=Hello%20SS%20Farms,%20I%20am%20interested%20in%20{{ product.name|urlencode }}%20(₹{{ product.price }}).%20Please%20let%20me%20know%20if%20it%20is%20available."
                                        target="_blank"
                                        rel="noopener noreferrer"
-                                       class="btn btn-success flex-grow-1"
+                                       class="btn btn-whatsapp flex-grow-1 shadow-sm"
                                        aria-label="Order {{ product.name }} on WhatsApp">
                                         <i class="bi bi-whatsapp me-1" aria-hidden="true"></i> WhatsApp
                                     </a>
@@ -116,10 +134,10 @@
                 </div>
             {% empty %}
                 <div class="col-12 text-center py-5">
-                    <div class="py-5">
+                    <div class="py-5 bg-white rounded-4 shadow-sm p-4 mx-auto" style="max-width: 500px;">
                         <i class="bi bi-search display-3 text-muted mb-3" aria-hidden="true"></i>
-                        <h2 class="h3 fw-bold">No Products Found</h2>
-                        <p class="text-muted">Try adjusting your search query or selected category filter.</p>
+                        <h2 class="h4 fw-bold text-dark">No Products Found</h2>
+                        <p class="text-muted small">We couldn't find any products matching your search query or selected filter.</p>
                         <a href="{% url 'products' %}" class="btn btn-success rounded-pill px-4 mt-2">
                             View All Products
                         </a>
@@ -131,31 +149,35 @@
         <!-- Pagination -->
         {% if page_obj.has_other_pages %}
             <nav aria-label="Products pagination" class="mt-5">
-                <ul class="pagination justify-content-center">
+                <ul class="pagination justify-content-center gap-1">
                     {% if page_obj.has_previous %}
                         <li class="page-item">
-                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">Previous</a>
+                            <a class="page-link rounded-pill px-3" href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
+                                &laquo; Previous
+                            </a>
                         </li>
                     {% else %}
-                        <li class="page-item disabled"><span class="page-link">Previous</span></li>
+                        <li class="page-item disabled"><span class="page-link rounded-pill px-3">&laquo; Previous</span></li>
                     {% endif %}
 
                     {% for num in page_obj.paginator.page_range %}
                         {% if page_obj.number == num %}
-                            <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                            <li class="page-item active"><span class="page-link rounded-circle px-3">{{ num }}</span></li>
                         {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
                             <li class="page-item">
-                                <a class="page-link" href="?page={{ num }}{% if query %}&q={{ query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">{{ num }}</a>
+                                <a class="page-link rounded-circle px-3" href="?page={{ num }}{% if query %}&q={{ query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">{{ num }}</a>
                             </li>
                         {% endif %}
                     {% endfor %}
 
                     {% if page_obj.has_next %}
                         <li class="page-item">
-                            <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">Next</a>
+                            <a class="page-link rounded-pill px-3" href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}{% if selected_category %}&category={{ selected_category }}{% endif %}">
+                                Next &raquo;
+                            </a>
                         </li>
                     {% else %}
-                        <li class="page-item disabled"><span class="page-link">Next</span></li>
+                        <li class="page-item disabled"><span class="page-link rounded-pill px-3">Next &raquo;</span></li>
                     {% endif %}
                 </ul>
             </nav>

@@ -14,47 +14,119 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
 <!-- ================= HERO SECTION ================= -->
 
-<section class="hero-section">
+<!-- ================= HERO SECTION ================= -->
 
-    <div class="overlay"></div>
+<section class="hero-section position-relative overflow-hidden">
 
-    <div class="container">
+    <div class="hero-ambient-glow"></div>
 
-        <div class="row align-items-center min-vh-100">
+    <div class="container position-relative z-2">
 
-            <div class="col-lg-6 text-white">
+        <div class="row align-items-center gy-5 min-vh-lg-85 py-5">
 
-                <span class="badge bg-warning text-dark px-3 py-2 mb-3">
-                    🐓 Premium Poultry Farm
-                </span>
+            <!-- Hero Left: Editorial Headline & Actions -->
+            <div class="col-lg-6 text-white hero-content">
 
-                <h1 class="display-3 fw-bold mb-4">
+                <div class="d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill hero-pill mb-3">
+                    <span class="hero-pill-dot"></span>
+                    <span class="small fw-semibold text-uppercase tracking-wider">Wanaparthy, Telangana • Pure Bloodlines</span>
+                </div>
+
+                <h1 class="hero-title fw-bold mb-3 text-white">
                     Original Fighting Breed
-                    <span class="text-warning">
-                        Roosters
+                    <span class="hero-gradient-text d-block">
+                        Roosters & Chicks
                     </span>
                 </h1>
 
-                <p class="lead mb-4">
-                    Healthy birds, pure bloodlines and trusted breeding
-                    from SS Farms Wanaparthy.
+                <p class="hero-lead lead mb-4 text-light-opacity">
+                    Authentic Bheemavaram bloodlines, healthy vaccinated birds, and premium hatching eggs raised with natural care directly at SS Farms Wanaparthy.
                 </p>
 
-                <div class="d-flex gap-3 flex-wrap">
+                <div class="d-flex gap-3 flex-wrap align-items-center mb-4 hero-cta-group">
+
+                    <a href="https://wa.me/918790733189?text=Hello%20SS%20Farms,%20I%20am%20interested%20in%20your%20Bheemavaram%20Roosters%20and%20Chicks"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn btn-whatsapp rounded-pill px-4 py-3 shadow-sm"
+                       aria-label="Inquire on WhatsApp">
+                        <i class="bi bi-whatsapp me-2" aria-hidden="true"></i>
+                        Inquire on WhatsApp
+                    </a>
 
                     <a href="{% url 'products' %}"
-                       class="btn btn-success btn-lg rounded-pill px-5">
-
+                       class="btn btn-outline-light rounded-pill px-4 py-3">
                         Browse Products
-
+                        <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
                     </a>
 
                     <a href="{% url 'preorder' %}"
-                       class="btn btn-outline-light btn-lg rounded-pill px-5">
-
-                        Pre-Order
-
+                       class="btn btn-warm-cream rounded-pill px-4 py-3">
+                        Pre-Order Batch
                     </a>
+
+                </div>
+
+                <!-- Trust Micro-Badges -->
+                <div class="hero-trust-bar d-flex gap-4 flex-wrap pt-3 border-top border-white-15">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-award-fill text-warning fs-5" aria-hidden="true"></i>
+                        <span class="small fw-semibold">Pure Aseel Lineage</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-geo-alt-fill text-warning fs-5" aria-hidden="true"></i>
+                        <span class="small fw-semibold">Wanaparthy Farm Direct</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-truck text-warning fs-5" aria-hidden="true"></i>
+                        <span class="small fw-semibold">Safe Transport Support</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Hero Right: 3D Layered Rooster Centerpiece -->
+            <div class="col-lg-6">
+
+                <div class="hero-3d-wrapper position-relative">
+
+                    <div class="hero-3d-backdrop"></div>
+
+                    <!-- Main 3D Rooster Visual Card -->
+                    <div class="hero-3d-card position-relative overflow-hidden rounded-4 shadow-lg">
+
+                        <img src="{% static 'images/rooster-3d-hero.jpg' %}"
+                             alt="SS Farms Original Bheemavaram Fighting Rooster"
+                             class="hero-3d-img w-100"
+                             width="600"
+                             height="600"
+                             fetchpriority="high">
+
+                        <div class="hero-3d-overlay"></div>
+
+                    </div>
+
+                    <!-- Floating Badge: Lineage -->
+                    <div class="hero-floating-badge badge-top-right">
+                        <div class="floating-icon bg-success-subtle text-success">
+                            <i class="bi bi-shield-check" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <div class="floating-title">100% Original</div>
+                            <div class="floating-sub">Fighting Bloodline</div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge: Farm Direct -->
+                    <div class="hero-floating-badge badge-bottom-left">
+                        <div class="floating-icon bg-warning-subtle text-warning">
+                            <i class="bi bi-heart-pulse-fill" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <div class="floating-title">Healthy & Vaccinated</div>
+                            <div class="floating-sub">Farm-Raised Birds</div>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -69,113 +141,110 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
 <!-- ================= WHY CHOOSE US ================= -->
 
-<section class="py-5 bg-light">
+<section class="py-5 bg-white border-top border-bottom border-light-subtle">
 
     <div class="container">
 
-        <div class="text-center mb-5">
+        <div class="text-center mb-5 section-header">
 
-            <h2 class="fw-bold">
+            <span class="badge px-3 py-2 rounded-pill mb-2 bg-success-subtle text-success fw-semibold">
+                🌱 Breeding Excellence
+            </span>
+
+            <h2 class="display-6 fw-bold section-title text-dark">
                 Why Choose SS Farms?
             </h2>
 
-            <p class="text-muted">
-                We raise healthy birds using quality breeding practices.
+            <p class="text-muted section-subtitle mx-auto" style="max-width: 600px;">
+                Original fighting bloodlines, dedicated organic farm care, and transparent service trusted across Telangana, Andhra Pradesh, and India.
             </p>
 
         </div>
 
-        <div class="row g-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col">
 
-                <div class="feature-card">
+                <div class="feature-card h-100">
 
                     <div class="feature-icon">
 
-                        <i class="bi bi-award-fill"
-                           aria-hidden="true"></i>
+                        <i class="bi bi-award-fill" aria-hidden="true"></i>
 
                     </div>
 
-                    <h3 class="h4">
-                        Pure Bloodline
+                    <h3 class="h5 fw-bold text-dark mb-2">
+                        Pure Bloodlines
                     </h3>
 
-                    <p>
-                        Carefully selected original fighting breeds.
+                    <p class="text-muted small mb-0">
+                        Carefully preserved Bheemavaram and Aseel lineages bred for health, strength, and authentic traits.
                     </p>
 
                 </div>
 
             </div>
 
+            <div class="col">
 
-            <div class="col-lg-3 col-md-6">
-
-                <div class="feature-card">
+                <div class="feature-card h-100">
 
                     <div class="feature-icon">
 
-                        <i class="bi bi-heart-pulse-fill"
-                           aria-hidden="true"></i>
+                        <i class="bi bi-heart-pulse-fill" aria-hidden="true"></i>
 
                     </div>
 
-                    <h3 class="h4">
-                        Healthy Birds
+                    <h3 class="h5 fw-bold text-dark mb-2">
+                        Vaccinated & Healthy
                     </h3>
 
-                    <p>
-                        Proper nutrition, hygiene and vaccination.
+                    <p class="text-muted small mb-0">
+                        Raised in clean, hygienic open-farm conditions with scheduled vaccinations and balanced natural nutrition.
                     </p>
 
                 </div>
 
             </div>
 
+            <div class="col">
 
-            <div class="col-lg-3 col-md-6">
-
-                <div class="feature-card">
+                <div class="feature-card h-100">
 
                     <div class="feature-icon">
 
-                        <i class="bi bi-truck"
-                           aria-hidden="true"></i>
+                        <i class="bi bi-truck" aria-hidden="true"></i>
 
                     </div>
 
-                    <h3 class="h4">
-                        Safe Delivery
+                    <h3 class="h5 fw-bold text-dark mb-2">
+                        Safe Transport
                     </h3>
 
-                    <p>
-                        Birds transported safely with proper care.
+                    <p class="text-muted small mb-0">
+                        Carefully packed birds and hatching eggs safely dispatched with dedicated temperature and aeration care.
                     </p>
 
                 </div>
 
             </div>
 
+            <div class="col">
 
-            <div class="col-lg-3 col-md-6">
-
-                <div class="feature-card">
+                <div class="feature-card h-100">
 
                     <div class="feature-icon">
 
-                        <i class="bi bi-whatsapp"
-                           aria-hidden="true"></i>
+                        <i class="bi bi-whatsapp" aria-hidden="true"></i>
 
                     </div>
 
-                    <h3 class="h4">
-                        Easy Ordering
+                    <h3 class="h5 fw-bold text-dark mb-2">
+                        Direct Farm Inquiry
                     </h3>
 
-                    <p>
-                        Order directly through WhatsApp anytime.
+                    <p class="text-muted small mb-0">
+                        Connect directly with our farm team on WhatsApp for live bird photos, videos, and personalized batch availability.
                     </p>
 
                 </div>
@@ -191,77 +260,85 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
 <!-- ================= CATEGORIES ================= -->
 
-<section class="py-5">
+<section class="py-5" style="background: var(--cream-bg);">
 
     <div class="container">
 
-        <div class="text-center mb-5">
+        <div class="text-center mb-5 section-header">
 
-            <h2 class="fw-bold">
-                Our Categories
+            <span class="badge px-3 py-2 rounded-pill mb-2 bg-success-subtle text-success fw-semibold">
+                Explore Farm Catalog
+            </span>
+
+            <h2 class="display-6 fw-bold section-title text-dark">
+                Shop by Category
             </h2>
 
-            <p class="text-muted">
-                Browse products by category.
+            <p class="text-muted section-subtitle mx-auto" style="max-width: 600px;">
+                Select from our authentic fighting roosters, high-yield chicks, hatching eggs, and premium poultry care essentials.
             </p>
 
         </div>
 
-        <div class="row g-4">
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4 g-3 g-md-4 justify-content-center">
 
             {% for category in categories %}
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col d-flex">
 
                 <a href="{% url 'products' %}?category={{ category.id }}"
-                   class="text-decoration-none text-dark">
+                   class="text-decoration-none d-flex flex-column w-100 category-card-link">
 
-                    <div class="category-card">
+                    <div class="category-card position-relative overflow-hidden w-100 h-100 d-flex flex-column justify-content-between">
 
-                        <div class="feature-category-icon">
+                        <div class="category-glow"></div>
 
-                            {% if category.name == "Roosters" %}
+                        <div>
 
-                                <i class="bi bi-feather"
-                                   aria-hidden="true"></i>
+                            <div class="feature-category-icon mb-3">
 
-                            {% elif category.name == "Chicks" %}
+                                {% if category.name == "Roosters" or "Rooster" in category.name %}
 
-                                <i class="bi bi-emoji-smile"
-                                   aria-hidden="true"></i>
+                                    <i class="bi bi-feather" aria-hidden="true"></i>
 
-                            {% elif category.name == "Hatching Eggs" %}
+                                {% elif category.name == "Chicks" %}
 
-                                <i class="bi bi-egg-fill"
-                                   aria-hidden="true"></i>
+                                    <i class="bi bi-egg" aria-hidden="true"></i>
 
-                            {% elif category.name == "Feed" %}
+                                {% elif category.name == "Hatching Eggs" %}
 
-                                <i class="bi bi-flower1"
-                                   aria-hidden="true"></i>
+                                    <i class="bi bi-egg-fill" aria-hidden="true"></i>
 
-                            {% elif category.name == "Medicines" %}
+                                {% elif category.name == "Feed" %}
 
-                                <i class="bi bi-capsule-pill"
-                                   aria-hidden="true"></i>
+                                    <i class="bi bi-basket2-fill" aria-hidden="true"></i>
 
-                            {% elif category.name == "Accessories" %}
+                                {% elif category.name == "Medicines" %}
 
-                                <i class="bi bi-basket2-fill"
-                                   aria-hidden="true"></i>
+                                    <i class="bi bi-capsule-pill" aria-hidden="true"></i>
 
-                            {% else %}
+                                {% elif category.name == "Accessories" %}
 
-                                <i class="bi bi-grid"
-                                   aria-hidden="true"></i>
+                                    <i class="bi bi-gear-fill" aria-hidden="true"></i>
 
-                            {% endif %}
+                                {% else %}
+
+                                    <i class="bi bi-grid-fill" aria-hidden="true"></i>
+
+                                {% endif %}
+
+                            </div>
+
+                            <h3 class="h5 fw-bold text-dark mb-2">
+                                {{ category.name }}
+                            </h3>
 
                         </div>
 
-                        <h3 class="h4 mb-0">
-                            {{ category.name }}
-                        </h3>
+                        <div class="category-action d-inline-flex align-items-center justify-content-center gap-1 text-success fw-semibold small mt-3">
+                            <span>Browse Category</span>
+                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                        </div>
 
                     </div>
 
@@ -280,19 +357,36 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
 <!-- ================= FEATURED PRODUCTS ================= -->
 
-<section class="py-5 bg-light">
+<section class="py-5 bg-white border-top border-bottom border-light-subtle">
 
     <div class="container">
 
-        <div class="text-center mb-5">
+        <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-5 section-header">
 
-            <h2 class="fw-bold">
-                Featured Products
-            </h2>
+            <div>
 
-            <p class="text-muted">
-                Discover our premium poultry collection.
-            </p>
+                <span class="badge px-3 py-2 rounded-pill mb-2 bg-success-subtle text-success fw-semibold">
+                    Featured Selection
+                </span>
+
+                <h2 class="display-6 fw-bold section-title text-dark mb-0">
+                    Premium Roosters & Birds
+                </h2>
+
+                <p class="text-muted section-subtitle mb-0 mt-2">
+                    Hand-selected pure bloodline roosters, chicks, and breeding stock available now.
+                </p>
+
+            </div>
+
+            <div>
+
+                <a href="{% url 'products' %}" class="btn btn-outline-success rounded-pill px-4">
+                    View All Products
+                    <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+                </a>
+
+            </div>
 
         </div>
 
@@ -304,61 +398,71 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
                 <div class="card product-card h-100 border-0">
 
-                    <div class="position-relative overflow-hidden">
+                    <!-- Image Showcase with Floating Status Badge -->
+                    <div class="product-image-wrapper position-relative overflow-hidden rounded-top-4">
 
-                        <a href="{% url 'product_detail' product.id %}">
+                        <a href="{% url 'product_detail' product.id %}" class="d-block overflow-hidden">
 
-                           <img src="{{ product.image.url }}"
-     class="product-image w-100"
-     alt="{{ product.name }}"
-     loading="lazy"
-     decoding="async">
+                            <img src="{{ product.image.url }}"
+                                 class="product-image w-100"
+                                 alt="{{ product.name }}"
+                                 loading="lazy"
+                                 decoding="async">
 
                         </a>
 
-                        <span class="badge bg-success position-absolute top-0 start-0 m-3">
-                            {{ product.status }}
-                        </span>
+                        <div class="product-badge-float position-absolute top-0 start-0 m-3">
+                            <span class="badge {% if product.status == 'In Stock' %}badge-in-stock{% elif product.status == 'Pre Order' %}badge-preorder{% else %}badge-out-of-stock{% endif %} px-3 py-2 rounded-pill shadow-sm">
+                                <span class="badge-dot"></span>
+                                {{ product.status }}
+                            </span>
+                        </div>
 
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body p-4 d-flex flex-column">
 
-                        <h3 class="h4 fw-bold">
-                            {{ product.name }}
+                        <span class="text-muted small text-uppercase fw-semibold mb-1">
+                            {{ product.category.name }}
+                        </span>
+
+                        <h3 class="h5 fw-bold mb-2">
+                            <a href="{% url 'product_detail' product.id %}" class="text-dark text-decoration-none product-title-link">
+                                {{ product.name }}
+                            </a>
                         </h3>
 
-                        <p class="text-muted">
+                        <p class="text-muted small flex-grow-1 mb-3">
                             {{ product.description|truncatewords:14 }}
                         </p>
 
-                        <p class="h4 text-success fw-bold">
-                            ₹{{ product.price }}
-                        </p>
+                        <div class="d-flex justify-content-between align-items-baseline pt-2 border-top border-light-subtle">
+                            <span class="h4 text-success fw-bold mb-0">₹{{ product.price }}</span>
+                            {% if product.stock > 0 and product.status == 'In Stock' %}
+                                <span class="badge bg-success-subtle text-success small px-2 py-1 rounded-pill">
+                                    {{ product.stock }} Available
+                                </span>
+                            {% endif %}
+                        </div>
 
                     </div>
 
-                    <div class="card-footer bg-white border-0">
+                    <div class="card-footer bg-white border-0 p-4 pt-0">
 
-                        <div class="d-grid gap-2">
+                        <div class="d-flex gap-2">
 
                             <a href="{% url 'product_detail' product.id %}"
-                               class="btn btn-outline-success">
-
-                                View Details
-
+                               class="btn btn-outline-success flex-grow-1">
+                                Details
                             </a>
 
-                            <a href="https://wa.me/{{ product.normalized_whatsapp_number }}?text=Hi,%20I%20am%20interested%20in%20{{ product.name|urlencode }}"
+                            <a href="https://wa.me/{{ product.normalized_whatsapp_number }}?text=Hi,%20I%20am%20interested%20in%20{{ product.name|urlencode }}%20(₹{{ product.price }})"
                                target="_blank"
                                rel="noopener noreferrer"
-                               class="btn btn-success">
-
-                                <i class="bi bi-whatsapp"
-                                   aria-hidden="true"></i>
-
-                                Order on WhatsApp
-
+                               class="btn btn-whatsapp flex-grow-1 shadow-sm"
+                               aria-label="Order {{ product.name }} on WhatsApp">
+                                <i class="bi bi-whatsapp me-1" aria-hidden="true"></i>
+                                WhatsApp
                             </a>
 
                         </div>
@@ -371,11 +475,13 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
             {% empty %}
 
-            <div class="col-12 text-center">
+            <div class="col-12 text-center py-5">
 
-                <h3 class="h4">
-                    No Products Available
-                </h3>
+                <div class="py-4">
+                    <i class="bi bi-inbox display-4 text-muted mb-3" aria-hidden="true"></i>
+                    <h3 class="h4 text-dark">No Products Available</h3>
+                    <p class="text-muted">Check back soon for our new breeding batches.</p>
+                </div>
 
             </div>
 
@@ -390,18 +496,22 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
 <!-- ================= FARM GALLERY ================= -->
 
-<section id="gallery" class="py-5">
+<section id="gallery" class="py-5" style="background: var(--cream-bg);">
 
     <div class="container">
 
-        <div class="text-center mb-5">
+        <div class="text-center mb-5 section-header">
 
-            <h2 class="fw-bold">
+            <span class="badge px-3 py-2 rounded-pill mb-2 bg-success-subtle text-success fw-semibold">
+                Authentic Farm Photos
+            </span>
+
+            <h2 class="display-6 fw-bold section-title text-dark">
                 Farm Gallery
             </h2>
 
-            <p class="text-muted">
-                Take a look at our farm and poultry.
+            <p class="text-muted section-subtitle mx-auto" style="max-width: 600px;">
+                Take a look at our hygienic open-farm rearing facilities, pureblood roosters, and brooding houses in Wanaparthy.
             </p>
 
         </div>
@@ -412,20 +522,31 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
             <div class="col-lg-4 col-md-6">
 
-                <img src="{{ image.image.url }}"
-     class="img-fluid rounded-4 shadow-sm"
-     alt="{{ image.title }}"
-     loading="lazy"
-     decoding="async">
+                <div class="position-relative overflow-hidden rounded-4 shadow-sm" style="background: #fff; border: 1px solid rgba(20,83,45,0.08); transition: var(--transition-smooth);">
+                    <img src="{{ image.image.url }}"
+                         class="img-fluid rounded-4 w-100"
+                         style="height: 280px; object-fit: cover; transition: transform 0.4s ease;"
+                         alt="{{ image.title }}"
+                         loading="lazy"
+                         decoding="async">
+                    {% if image.title %}
+                        <div class="position-absolute bottom-0 start-0 end-0 p-3 text-white" style="background: linear-gradient(180deg, transparent 0%, rgba(10,46,31,0.85) 100%);">
+                            <span class="fw-semibold small">{{ image.title }}</span>
+                        </div>
+                    {% endif %}
+                </div>
+
             </div>
 
             {% empty %}
 
-            <div class="text-center">
+            <div class="col-12 text-center py-5">
 
-                <h3 class="h4">
-                    No gallery images uploaded yet.
-                </h3>
+                <div class="py-4">
+                    <i class="bi bi-images display-4 text-muted mb-3" aria-hidden="true"></i>
+                    <h3 class="h4 text-dark">No Gallery Photos Yet</h3>
+                    <p class="text-muted">Fresh batch photos will be uploaded soon.</p>
+                </div>
 
             </div>
 
@@ -440,76 +561,74 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
 <!-- ================= TESTIMONIALS ================= -->
 
-<section class="py-5 bg-light">
+<section class="py-5 bg-white border-top border-bottom border-light-subtle">
 
     <div class="container">
 
-        <div class="text-center mb-5">
+        <div class="text-center mb-5 section-header">
 
-            <h2 class="fw-bold">
+            <span class="badge px-3 py-2 rounded-pill mb-2 bg-success-subtle text-success fw-semibold">
+                Client Experiences
+            </span>
+
+            <h2 class="display-6 fw-bold section-title text-dark">
                 What Our Customers Say
             </h2>
 
-            <p class="text-muted">
-                Trusted by poultry farmers and bird lovers.
+            <p class="text-muted section-subtitle mx-auto" style="max-width: 600px;">
+                Trusted by poultry hobbyists, traditional rooster breeders, and farm owners across Telangana and South India.
             </p>
 
         </div>
 
-        <div class="row">
+        <div class="row g-4">
 
             {% for review in testimonials %}
 
-            <div class="col-lg-4 col-md-6 mb-4">
+            <div class="col-lg-4 col-md-6">
 
-                <div class="card border-0 shadow rounded-4 h-100">
+                <div class="card testimonial-card border-0 p-4 h-100" style="background: var(--surface-white); border: 1px solid rgba(20,83,45,0.08) !important; box-shadow: var(--shadow-3d-md); border-radius: var(--radius-lg); transition: var(--transition-smooth);">
 
-                    <div class="card-body text-center">
+                    <div class="card-body p-0 text-center d-flex flex-column align-items-center">
 
                         {% if review.photo %}
 
                         <img src="{{ review.photo.url }}"
-     class="rounded-circle mb-3"
-     width="90"
-     height="90"
-     style="object-fit:cover;"
-     alt="{{ review.name }} testimonial"
-     loading="lazy"
-     decoding="async">
+                             class="rounded-circle mb-3 shadow-sm"
+                             width="80"
+                             height="80"
+                             style="object-fit:cover; border: 3px solid var(--forest-accent);"
+                             alt="{{ review.name }} testimonial"
+                             loading="lazy"
+                             decoding="async">
 
                         {% else %}
 
-                       <img src="https://ui-avatars.com/api/?name={{ review.name }}"
-     class="rounded-circle mb-3"
-     width="90"
-     height="90"
-     alt="{{ review.name }} profile"
-     loading="lazy"
-     decoding="async">
+                        <img src="https://ui-avatars.com/api/?name={{ review.name }}&background=14532d&color=fff"
+                             class="rounded-circle mb-3 shadow-sm"
+                             width="80"
+                             height="80"
+                             alt="{{ review.name }} profile"
+                             loading="lazy"
+                             decoding="async">
+
                         {% endif %}
 
-                        <h3 class="h5 fw-bold">
+                        <h3 class="h5 fw-bold text-dark mb-1">
                             {{ review.name }}
                         </h3>
 
-                        <div class="mb-3"
-                             aria-label="{{ review.rating }} out of 5 stars">
+                        <div class="mb-3" aria-label="{{ review.rating }} out of 5 stars">
 
                             {% for i in "12345" %}
 
                                 {% if forloop.counter <= review.rating %}
 
-                                    <span class="text-warning fs-5"
-                                          aria-hidden="true">
-                                        ★
-                                    </span>
+                                    <span class="text-warning fs-6" aria-hidden="true">★</span>
 
                                 {% else %}
 
-                                    <span class="text-secondary fs-5"
-                                          aria-hidden="true">
-                                        ☆
-                                    </span>
+                                    <span class="text-secondary fs-6" aria-hidden="true">☆</span>
 
                                 {% endif %}
 
@@ -517,7 +636,7 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
                         </div>
 
-                        <p class="text-muted">
+                        <p class="text-muted small fst-italic mb-0 flex-grow-1 lh-lg">
                             "{{ review.review }}"
                         </p>
 
@@ -529,9 +648,9 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 
             {% empty %}
 
-            <div class="text-center">
+            <div class="col-12 text-center py-4">
 
-                <p>
+                <p class="text-muted">
                     No customer reviews available yet.
                 </p>
 
@@ -546,74 +665,94 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 </section>
 
 
-<!-- ================= STATISTICS ================= -->
+<!-- ================= 3D STATISTICS SHOWCASE ================= -->
 
-<section class="py-5 bg-success text-white">
+<section class="py-5 position-relative overflow-hidden text-white" style="background: linear-gradient(135deg, #071f15 0%, #0a2e1f 55%, #14532d 100%);">
 
-    <div class="container">
+    <div class="container py-4 position-relative" style="z-index: 2;">
 
-        <div class="row text-center">
+        <div class="row text-center g-4">
 
-            <div class="col-lg-3 col-6 mb-4">
+            <div class="col-lg-3 col-6">
 
-                <i class="bi bi-feather display-4"
-                   aria-hidden="true"></i>
+                <div class="p-4 rounded-4" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(8px);">
 
-                <h2 class="counter mt-3">
-                    500+
-                </h2>
+                    <div class="feature-icon mb-3 mx-auto" style="width: 54px; height: 54px; font-size: 22px; background: rgba(34,197,94,0.2); border-color: rgba(34,197,94,0.4); color: #86efac;">
+                        <i class="bi bi-feather" aria-hidden="true"></i>
+                    </div>
 
-                <p>
-                    Premium Birds Sold
-                </p>
+                    <h2 class="counter display-6 fw-bold text-white mb-1" style="color: #fcd34d !important;">
+                        500+
+                    </h2>
 
-            </div>
+                    <p class="text-light-opacity small mb-0 fw-medium">
+                        Premium Birds Delivered
+                    </p>
 
-
-            <div class="col-lg-3 col-6 mb-4">
-
-                <i class="bi bi-egg-fill display-4"
-                   aria-hidden="true"></i>
-
-                <h2 class="counter mt-3">
-                    10000+
-                </h2>
-
-                <p>
-                    Hatching Eggs Sold
-                </p>
+                </div>
 
             </div>
 
 
-            <div class="col-lg-3 col-6 mb-4">
+            <div class="col-lg-3 col-6">
 
-                <i class="bi bi-people-fill display-4"
-                   aria-hidden="true"></i>
+                <div class="p-4 rounded-4" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(8px);">
 
-                <h2 class="counter mt-3">
-                    800+
-                </h2>
+                    <div class="feature-icon mb-3 mx-auto" style="width: 54px; height: 54px; font-size: 22px; background: rgba(34,197,94,0.2); border-color: rgba(34,197,94,0.4); color: #86efac;">
+                        <i class="bi bi-egg-fill" aria-hidden="true"></i>
+                    </div>
 
-                <p>
-                    Happy Customers
-                </p>
+                    <h2 class="counter display-6 fw-bold text-white mb-1" style="color: #fcd34d !important;">
+                        10,000+
+                    </h2>
+
+                    <p class="text-light-opacity small mb-0 fw-medium">
+                        Hatching Eggs Supplied
+                    </p>
+
+                </div>
 
             </div>
 
 
-            <div class="col-lg-3 col-6 mb-4">
+            <div class="col-lg-3 col-6">
 
-                <i class="bi bi-award-fill display-4"
-                   aria-hidden="true"></i>
+                <div class="p-4 rounded-4" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(8px);">
 
-                <h2 class="counter mt-3">
-                    8+
-                </h2>
+                    <div class="feature-icon mb-3 mx-auto" style="width: 54px; height: 54px; font-size: 22px; background: rgba(34,197,94,0.2); border-color: rgba(34,197,94,0.4); color: #86efac;">
+                        <i class="bi bi-people-fill" aria-hidden="true"></i>
+                    </div>
 
-                <p>
-                    Years of Experience
-                </p>
+                    <h2 class="counter display-6 fw-bold text-white mb-1" style="color: #fcd34d !important;">
+                        800+
+                    </h2>
+
+                    <p class="text-light-opacity small mb-0 fw-medium">
+                        Satisfied Farm Customers
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-6">
+
+                <div class="p-4 rounded-4" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(8px);">
+
+                    <div class="feature-icon mb-3 mx-auto" style="width: 54px; height: 54px; font-size: 22px; background: rgba(34,197,94,0.2); border-color: rgba(34,197,94,0.4); color: #86efac;">
+                        <i class="bi bi-award-fill" aria-hidden="true"></i>
+                    </div>
+
+                    <h2 class="counter display-6 fw-bold text-white mb-1" style="color: #fcd34d !important;">
+                        8+
+                    </h2>
+
+                    <p class="text-light-opacity small mb-0 fw-medium">
+                        Years of Bloodline Breeding
+                    </p>
+
+                </div>
 
             </div>
 
@@ -624,27 +763,31 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
 </section>
 
 
-<!-- ================= FIND US ================= -->
+<!-- ================= FIND US & GOOGLE MAP ================= -->
 
-<section class="py-5 bg-light">
+<section class="py-5" style="background: var(--cream-bg);">
 
     <div class="container">
 
-        <div class="text-center mb-5">
+        <div class="text-center mb-5 section-header">
 
-            <h2 class="fw-bold">
+            <span class="badge px-3 py-2 rounded-pill mb-2 bg-success-subtle text-success fw-semibold">
+                Visit in Person
+            </span>
+
+            <h2 class="display-6 fw-bold section-title text-dark">
                 Visit Our Farm
             </h2>
 
-            <p class="text-muted">
-                We welcome you to SS Farms, Wanaparthy.
+            <p class="text-muted section-subtitle mx-auto" style="max-width: 600px;">
+                We welcome rooster enthusiasts and poultry farmers to visit SS Farms in Wanaparthy.
             </p>
 
         </div>
 
         <div class="row align-items-center g-5">
 
-            <!-- Google Map -->
+            <!-- Google Map in 3D frame -->
 
             <div class="col-lg-7">
 
@@ -662,58 +805,52 @@ SS Farms Wanaparthy offers premium Bheemavaram Fighting Roosters, chicks, hatchi
             </div>
 
 
-            <!-- Contact Info -->
+            <!-- Contact Info Card -->
 
             <div class="col-lg-5">
 
                 <div class="contact-card">
 
-                    <h2 class="h3 mb-4">
-                        SS Farms
+                    <h2 class="h3 fw-bold mb-4 text-dark">
+                        SS Farms Wanaparthy
                     </h2>
 
-                    <p>
-
-                        <i class="bi bi-geo-alt-fill text-success me-2"
-                           aria-hidden="true"></i>
-
-                        Wanaparthy, Telangana
-
+                    <p class="mb-3">
+                        <i class="bi bi-geo-alt-fill text-success me-2" aria-hidden="true"></i>
+                        Wanaparthy, Telangana, India
                     </p>
 
-                    <p>
-
-                        <i class="bi bi-telephone-fill text-success me-2"
-                           aria-hidden="true"></i>
-
-                        <a href="tel:+918790733189" class="text-decoration-none text-dark">
+                    <p class="mb-3">
+                        <i class="bi bi-telephone-fill text-success me-2" aria-hidden="true"></i>
+                        <a href="tel:+918790733189" class="text-decoration-none text-dark fw-semibold">
                             +91 8790733189
                         </a>
-
                     </p>
 
-                    <p>
-
-                        <i class="bi bi-envelope-fill text-success me-2"
-                           aria-hidden="true"></i>
-
+                    <p class="mb-4">
+                        <i class="bi bi-envelope-fill text-success me-2" aria-hidden="true"></i>
                         <a href="mailto:ssfarmswanaparthy@gmail.com" class="text-decoration-none text-dark">
                             ssfarmswanaparthy@gmail.com
                         </a>
-
                     </p>
 
-                    <a href="https://maps.app.goo.gl/gGbrQm8dKydw6gWD8"
-                       target="_blank"
-                       rel="noopener"
-                       class="btn btn-success mt-3">
+                    <div class="d-flex flex-column gap-2">
+                        <a href="https://maps.app.goo.gl/gGbrQm8dKydw6gWD8"
+                           target="_blank"
+                           rel="noopener"
+                           class="btn btn-outline-success w-100 py-2 rounded-pill fw-semibold">
+                            <i class="bi bi-geo-alt me-1" aria-hidden="true"></i>
+                            Open in Google Maps
+                        </a>
 
-                        <i class="bi bi-geo-alt"
-                           aria-hidden="true"></i>
-
-                        Open in Google Maps
-
-                    </a>
+                        <a href="https://wa.me/918790733189?text=Hello%20SS%20Farms,%20I%20am%20planning%20to%20visit%20your%20farm."
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-whatsapp w-100 py-2 rounded-pill fw-bold shadow-sm">
+                            <i class="bi bi-whatsapp me-1" aria-hidden="true"></i>
+                            Coordinate Visit on WhatsApp
+                        </a>
+                    </div>
 
                 </div>
 

@@ -4,120 +4,129 @@
 {% block meta_description %}Book your original Bheemavaram roosters, chicks, and hatching eggs in advance from SS Farms Wanaparthy for the upcoming batch.{% endblock %}
 
 {% block content %}
-<section class="py-5 bg-light">
+<section class="py-5" style="background: linear-gradient(180deg, var(--linen-warm) 0%, var(--cream-bg) 100%);">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
-                <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
-                    <div class="card-header bg-success text-white text-center py-4">
-                        <h1 class="h3 mb-1 fw-bold">
+                <!-- 3D Pre-Order Container -->
+                <div class="card border-0 rounded-4 overflow-hidden" style="background: var(--surface-white); border: 1px solid rgba(20,83,45,0.08) !important; box-shadow: var(--shadow-3d-lg);">
+                    <!-- Header -->
+                    <div class="py-4 px-4 px-md-5 text-center text-white" style="background: linear-gradient(135deg, var(--forest-deep) 0%, var(--forest-emerald) 100%); border-bottom: 1px solid rgba(34, 197, 94, 0.25);">
+                        <span class="badge px-3 py-1 rounded-pill mb-2 bg-white text-dark small fw-semibold">
+                            Batch Reservation
+                        </span>
+                        <h1 class="h3 mb-2 fw-bold text-white">
                             <i class="bi bi-calendar-check me-2" aria-hidden="true"></i>Pre-Order Form
                         </h1>
-                        <p class="mb-0 text-white-50 small">
+                        <p class="mb-0 text-light-opacity small max-w-lg mx-auto" style="max-width: 520px;">
                             Reserve upcoming breeding batches of pureblood fighting roosters, chicks, and fertile hatching eggs.
                         </p>
                     </div>
 
-                    <div class="card-body p-4 p-md-5 bg-white">
+                    <div class="card-body p-4 p-md-5">
                         <form method="POST" novalidate>
                             {% csrf_token %}
 
                             {% if form.non_field_errors %}
-                                <div class="alert alert-danger">
+                                <div class="alert alert-danger rounded-3 mb-4">
                                     {% for error in form.non_field_errors %}
-                                        <p class="mb-0">{{ error }}</p>
+                                        <p class="mb-0 small">{{ error }}</p>
                                     {% endfor %}
                                 </div>
                             {% endif %}
 
-                            <div class="mb-3">
-                                <label for="preorder_name" class="form-label fw-semibold">
-                                    Customer Name <span class="text-danger">*</span>
-                                </label>
-                                {{ form.customer_name }}
-                                {% if form.customer_name.errors %}
-                                    <div class="text-danger small mt-1">
-                                        {{ form.customer_name.errors.0 }}
-                                    </div>
-                                {% endif %}
-                            </div>
+                            <div class="row g-3">
+                                <div class="col-md-6 mb-2">
+                                    <label for="preorder_name" class="form-label fw-semibold text-dark small">
+                                        Customer Name <span class="text-danger">*</span>
+                                    </label>
+                                    {{ form.customer_name }}
+                                    {% if form.customer_name.errors %}
+                                        <div class="text-danger small mt-1">
+                                            {{ form.customer_name.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="preorder_phone" class="form-label fw-semibold">
-                                    WhatsApp Phone Number <span class="text-danger">*</span>
-                                </label>
-                                {{ form.phone_number }}
-                                {% if form.phone_number.errors %}
-                                    <div class="text-danger small mt-1">
-                                        {{ form.phone_number.errors.0 }}
-                                    </div>
-                                {% endif %}
-                            </div>
+                                <div class="col-md-6 mb-2">
+                                    <label for="preorder_phone" class="form-label fw-semibold text-dark small">
+                                        WhatsApp Phone Number <span class="text-danger">*</span>
+                                    </label>
+                                    {{ form.phone_number }}
+                                    {% if form.phone_number.errors %}
+                                        <div class="text-danger small mt-1">
+                                            {{ form.phone_number.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="preorder_product" class="form-label fw-semibold">
-                                    Product to Pre-Order <span class="text-danger">*</span>
-                                </label>
-                                {{ form.product }}
-                                {% if form.product.errors %}
-                                    <div class="text-danger small mt-1">
-                                        {{ form.product.errors.0 }}
-                                    </div>
-                                {% endif %}
-                            </div>
+                                <div class="col-md-8 mb-2">
+                                    <label for="preorder_product" class="form-label fw-semibold text-dark small">
+                                        Product / Breed to Pre-Order <span class="text-danger">*</span>
+                                    </label>
+                                    {{ form.product }}
+                                    {% if form.product.errors %}
+                                        <div class="text-danger small mt-1">
+                                            {{ form.product.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="preorder_quantity" class="form-label fw-semibold">
-                                    Quantity <span class="text-danger">*</span>
-                                </label>
-                                {{ form.quantity }}
-                                {% if form.quantity.errors %}
-                                    <div class="text-danger small mt-1">
-                                        {{ form.quantity.errors.0 }}
-                                    </div>
-                                {% endif %}
-                            </div>
+                                <div class="col-md-4 mb-2">
+                                    <label for="preorder_quantity" class="form-label fw-semibold text-dark small">
+                                        Quantity <span class="text-danger">*</span>
+                                    </label>
+                                    {{ form.quantity }}
+                                    {% if form.quantity.errors %}
+                                        <div class="text-danger small mt-1">
+                                            {{ form.quantity.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="preorder_date" class="form-label fw-semibold">
-                                    Preferred Delivery / Ready Date <span class="text-danger">*</span>
-                                </label>
-                                {{ form.preferred_date }}
-                                <div class="form-text">Choose the date when you would like the birds/eggs to be ready.</div>
-                                {% if form.preferred_date.errors %}
-                                    <div class="text-danger small mt-1">
-                                        {{ form.preferred_date.errors.0 }}
-                                    </div>
-                                {% endif %}
-                            </div>
+                                <div class="col-12 mb-2">
+                                    <label for="preorder_date" class="form-label fw-semibold text-dark small">
+                                        Preferred Ready / Delivery Date <span class="text-danger">*</span>
+                                    </label>
+                                    {{ form.preferred_date }}
+                                    <div class="form-text small text-muted">Choose when you would like the birds or hatching eggs to be prepared.</div>
+                                    {% if form.preferred_date.errors %}
+                                        <div class="text-danger small mt-1">
+                                            {{ form.preferred_date.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="preorder_address" class="form-label fw-semibold">
-                                    Delivery Address / Location <span class="text-danger">*</span>
-                                </label>
-                                {{ form.address }}
-                                {% if form.address.errors %}
-                                    <div class="text-danger small mt-1">
-                                        {{ form.address.errors.0 }}
-                                    </div>
-                                {% endif %}
-                            </div>
+                                <div class="col-12 mb-2">
+                                    <label for="preorder_address" class="form-label fw-semibold text-dark small">
+                                        Delivery Address / Destination Town <span class="text-danger">*</span>
+                                    </label>
+                                    {{ form.address }}
+                                    {% if form.address.errors %}
+                                        <div class="text-danger small mt-1">
+                                            {{ form.address.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                </div>
 
-                            <div class="mb-4">
-                                <label for="preorder_notes" class="form-label fw-semibold">
-                                    Additional Notes (Optional)
-                                </label>
-                                {{ form.notes }}
-                                {% if form.notes.errors %}
-                                    <div class="text-danger small mt-1">
-                                        {{ form.notes.errors.0 }}
-                                    </div>
-                                {% endif %}
-                            </div>
+                                <div class="col-12 mb-4">
+                                    <label for="preorder_notes" class="form-label fw-semibold text-dark small">
+                                        Additional Notes or Breed Preferences (Optional)
+                                    </label>
+                                    {{ form.notes }}
+                                    {% if form.notes.errors %}
+                                        <div class="text-danger small mt-1">
+                                            {{ form.notes.errors.0 }}
+                                        </div>
+                                    {% endif %}
+                                </div>
 
-                            <button type="submit" class="btn btn-success btn-lg w-100 py-3 rounded-pill fw-bold shadow-sm">
-                                <i class="bi bi-send-check me-2" aria-hidden="true"></i>Submit Pre-Order
-                            </button>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-success btn-lg w-100 py-3 rounded-pill fw-bold shadow-sm">
+                                        <i class="bi bi-send-check me-2" aria-hidden="true"></i>Submit Pre-Order Reservation
+                                    </button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>

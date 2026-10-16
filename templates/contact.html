@@ -1,115 +1,126 @@
 {% extends 'base.html' %}
-{% block title %}
-Contact SS Farms Wanaparthy
-{% endblock %}
+{% block title %}Contact SS Farms Wanaparthy{% endblock %}
 
 {% block meta_description %}
 Contact SS Farms Wanaparthy for premium Bheemavaram Fighting Roosters, chicks, hatching eggs and poultry products.
 {% endblock %}
 
 {% block content %}
-
-<section class="py-5 bg-light">
-
+<section class="py-5" style="background: linear-gradient(180deg, var(--linen-warm) 0%, var(--cream-bg) 100%);">
     <div class="container">
-
+        <!-- Header -->
         <div class="text-center mb-5">
-
-            <h1 class="fw-bold text-success">
+            <span class="badge px-3 py-2 rounded-pill mb-2 bg-success-subtle text-success fw-semibold">
+                Get In Touch
+            </span>
+            <h1 class="display-6 fw-bold text-dark">
                 Contact SS Farms
             </h1>
-
-            <p class="text-muted">
-                We'd love to hear from you. Reach out using any of the methods below.
+            <p class="text-muted mx-auto" style="max-width: 600px;">
+                We'd love to hear from you. Reach out for bird inquiries, hatching batch bookings, or visit our farm in Wanaparthy.
             </p>
-
         </div>
 
-        <div class="row">
+        <div class="row g-4 align-items-stretch">
+            <!-- Contact Information Card -->
+            <div class="col-lg-5">
+                <div class="contact-card h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <h2 class="h4 fw-bold mb-4 text-dark">
+                            <i class="bi bi-geo-alt-fill text-success me-2"></i>Farm Location & Details
+                        </h2>
 
-            <!-- Contact Information -->
+                        <!-- Address -->
+                        <div class="d-flex align-items-start gap-3 mb-4">
+                            <div class="trust-badge-icon">
+                                <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="h6 fw-bold text-dark mb-1">Farm Address</h3>
+                                <p class="text-muted mb-0 small">
+                                    SS Farms, Wanaparthy,<br>
+                                    Telangana, India — 509103
+                                </p>
+                            </div>
+                        </div>
 
-            <div class="col-lg-5 mb-4">
+                        <!-- Phone -->
+                        <div class="d-flex align-items-start gap-3 mb-4">
+                            <div class="trust-badge-icon">
+                                <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="h6 fw-bold text-dark mb-1">Direct Call</h3>
+                                <a href="tel:+918790733189" class="text-success text-decoration-none fw-semibold">
+                                    +91 8790733189
+                                </a>
+                            </div>
+                        </div>
 
-                <div class="card shadow border-0 rounded-4 h-100">
+                        <!-- WhatsApp -->
+                        <div class="d-flex align-items-start gap-3 mb-4">
+                            <div class="trust-badge-icon" style="background: rgba(37, 211, 102, 0.15); color: #16a34a;">
+                                <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="h6 fw-bold text-dark mb-1">WhatsApp Chat</h3>
+                                <a href="https://wa.me/918790733189" target="_blank" rel="noopener noreferrer" class="text-success text-decoration-none fw-semibold">
+                                    +91 8790733189 <span class="badge bg-success-subtle text-success ms-1 small">Online</span>
+                                </a>
+                            </div>
+                        </div>
 
-                    <div class="card-body">
-
-                        <h3 class="mb-4">
-                            Contact Information
-                        </h3>
-
-                        <p>
-                            <i class="bi bi-geo-alt-fill text-success"></i>
-                            <strong>Address:</strong><br>
-                            SS Farms, Wanaparthy,<br>
-                            Telangana, India
-                        </p>
-
-                        <hr>
-
-                        <p>
-                            <i class="bi bi-telephone-fill text-success"></i>
-                            <strong>Phone:</strong><br>
-                            <a href="tel:+918790733189" class="text-decoration-none text-dark">
-                                +91 8790733189
-                            </a>
-                        </p>
-
-                        <hr>
-
-                        <p>
-                            <i class="bi bi-whatsapp text-success"></i>
-                            <strong>WhatsApp:</strong><br>
-                            <a href="https://wa.me/918790733189" class="text-decoration-none">
-                                +91 8790733189
-                            </a>
-                        </p>
-
-                        <hr>
-
-                        <p>
-                            <i class="bi bi-envelope-fill text-success"></i>
-                            <strong>Email:</strong><br>
-                            <a href="mailto:ssfarmswanaparthy@gmail.com" class="text-decoration-none text-dark">
-                                ssfarmswanaparthy@gmail.com
-                            </a>
-                        </p>
-
+                        <!-- Email -->
+                        <div class="d-flex align-items-start gap-3 mb-4">
+                            <div class="trust-badge-icon">
+                                <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <h3 class="h6 fw-bold text-dark mb-1">Email Inquiry</h3>
+                                <a href="mailto:ssfarmswanaparthy@gmail.com" class="text-dark text-decoration-none small">
+                                    ssfarmswanaparthy@gmail.com
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
+                    <!-- Direct WhatsApp Button -->
+                    <div class="mt-4 pt-3 border-top">
+                        <a href="https://wa.me/918790733189?text=Hello%20SS%20Farms,%20I%20have%20an%20inquiry%20regarding%20your%20birds."
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-whatsapp w-100 py-3 rounded-pill fw-bold shadow-sm">
+                            <i class="bi bi-whatsapp me-2" aria-hidden="true"></i>Instant WhatsApp Chat
+                        </a>
+                    </div>
                 </div>
-
             </div>
 
-            <!-- Contact Form -->
-
+            <!-- Contact Form Card -->
             <div class="col-lg-7">
+                <div class="contact-card h-100">
+                    <h2 class="h4 fw-bold mb-2 text-dark">
+                        Send Us a Message
+                    </h2>
+                    <p class="text-muted small mb-4">
+                        Fill in your details below and our farm manager will get back to you promptly.
+                    </p>
 
-                <div class="card shadow border-0 rounded-4">
+                    <form method="POST" novalidate>
+                        {% csrf_token %}
+                        {{ form.website }}
 
-                    <div class="card-body">
+                        {% if form.non_field_errors %}
+                            <div class="alert alert-danger rounded-3 mb-3">
+                                {% for error in form.non_field_errors %}
+                                    <p class="mb-0 small">{{ error }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
 
-                        <h3 class="mb-4">
-                            Send Us a Message
-                        </h3>
-
-                        
-                        <form method="POST" novalidate>
-
-                            {% csrf_token %}
-                            {{ form.website }}
-
-                            {% if form.non_field_errors %}
-                                <div class="alert alert-danger">
-                                    {% for error in form.non_field_errors %}
-                                        <p class="mb-0">{{ error }}</p>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
-
-                            <div class="mb-3">
-                                <label for="contact_name" class="form-label">
+                        <div class="row g-3">
+                            <div class="col-md-6 mb-2">
+                                <label for="contact_name" class="form-label fw-semibold text-dark small">
                                     Full Name <span class="text-danger">*</span>
                                 </label>
                                 {{ form.name }}
@@ -120,20 +131,8 @@ Contact SS Farms Wanaparthy for premium Bheemavaram Fighting Roosters, chicks, h
                                 {% endif %}
                             </div>
 
-                            <div class="mb-3">
-                                <label for="contact_email" class="form-label">
-                                    Email Address <span class="text-danger">*</span>
-                                </label>
-                                {{ form.email }}
-                                {% if form.email.errors %}
-                                    <div class="text-danger small mt-1">
-                                        {{ form.email.errors.0 }}
-                                    </div>
-                                {% endif %}
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="contact_phone" class="form-label">
+                            <div class="col-md-6 mb-2">
+                                <label for="contact_phone" class="form-label fw-semibold text-dark small">
                                     Phone Number <span class="text-danger">*</span>
                                 </label>
                                 {{ form.phone }}
@@ -144,9 +143,21 @@ Contact SS Farms Wanaparthy for premium Bheemavaram Fighting Roosters, chicks, h
                                 {% endif %}
                             </div>
 
-                            <div class="mb-3">
-                                <label for="contact_message" class="form-label">
-                                    Message <span class="text-danger">*</span>
+                            <div class="col-12 mb-2">
+                                <label for="contact_email" class="form-label fw-semibold text-dark small">
+                                    Email Address <span class="text-danger">*</span>
+                                </label>
+                                {{ form.email }}
+                                {% if form.email.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ form.email.errors.0 }}
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-12 mb-3">
+                                <label for="contact_message" class="form-label fw-semibold text-dark small">
+                                    Your Message <span class="text-danger">*</span>
                                 </label>
                                 {{ form.message }}
                                 {% if form.message.errors %}
@@ -156,28 +167,16 @@ Contact SS Farms Wanaparthy for premium Bheemavaram Fighting Roosters, chicks, h
                                 {% endif %}
                             </div>
 
-                            <button
-                                type="submit"
-                                class="btn btn-success w-100">
-
-                                <i class="bi bi-send-fill" aria-hidden="true"></i>
-
-                                Send Message
-
-                            </button>
-
-                        </form>
-
-                    </div>
-
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-success btn-lg w-100 py-3 rounded-pill fw-bold shadow-sm">
+                                    <i class="bi bi-send-fill me-2" aria-hidden="true"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
-
 {% endblock %}
